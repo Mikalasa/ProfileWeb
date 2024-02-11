@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { customTailwind } from "../../constants/custom-tailwind";
 import { navLinks } from "../../constants/custom-config";
 import { menu, close } from "../../constants/custom-config";
@@ -33,8 +32,8 @@ const Navbar = () => {
             }`}
         >
             <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-                <Link
-                    to='/'
+                <a
+                    href="#"
                     className='flex items-center gap-2'
                     onClick={() => {
                         setActive("");
@@ -45,7 +44,7 @@ const Navbar = () => {
                         Xingyi &nbsp;
                         <span className='sm:block hidden'> | Web Developer</span>
                     </p>
-                </Link>
+                </a>
 
                 <ul className='list-none hidden sm:flex flex-row gap-10'>
                     {navLinks.map((nav) => (
@@ -56,7 +55,7 @@ const Navbar = () => {
                             } hover:text-white text-[18px] font-medium cursor-pointer`}
                             onClick={() => setActive(nav.title)}
                         >
-                            <a>{nav.title}</a>
+                            <a href={`#${nav.id}`}>{nav.title}</a>
                         </li>
                     ))}
                 </ul>

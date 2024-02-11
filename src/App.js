@@ -20,25 +20,23 @@ function App() {
     }, []);
 
     return (
-        <BrowserRouter>
-            <div className="App">
-                <Navbar/>
-                <div className="hero-container layout-container">
-                    <HeroInfo/>
-                    <TheThinkerCanvas/>
-                    <MouseScrollicon/>
-                </div>
-                <div className="gradient-transition"></div>
-                <div className="projects-container layout-container">
-                    <Projects/>
-                    <StarsCanvas/>
-                </div>
-                <About />
-                <div className="about-container layout-container">
-                    <WebglPc/>
-                </div>
+        <div className="App">
+            <Navbar/>
+            <div className="hero-container layout-container">
+                <HeroInfo/>
+                <TheThinkerCanvas/>
+                <MouseScrollicon/>
             </div>
-        </BrowserRouter>
+            <div className="gradient-transition"></div>
+            <div className="projects-container layout-container">
+                <Projects/>
+                <StarsCanvas/>
+            </div>
+            <About/>
+            <div className="about-container layout-container">
+                <WebglPc/>
+            </div>
+        </div>
     );
 }
 
