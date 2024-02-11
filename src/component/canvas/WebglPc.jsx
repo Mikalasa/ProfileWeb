@@ -50,7 +50,7 @@ const MacModel = ({startAnimation}) => {
                 rotation={[0, -Math.PI / 2, 0]}
             />
             <Html
-                position={[0, 0, 2.65]}
+                position={[0, 0, 2.7]}
                 transform occlude
                 wrapperClass="webgl-iframe-wrapper"
                 distanceFactor={1.65}
