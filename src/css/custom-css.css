@@ -1,0 +1,73 @@
+.custom-drop-down-menu {
+    background: -webkit-linear-gradient(to top, #050505, #000000);
+    background: linear-gradient(to top, #000000, #000000);
+}
+
+.custom-navbar-bg {
+    background: -webkit-linear-gradient(180deg, #050505, #000000);
+}
+
+.JavaScript-tag {
+    background-color: #f7df1e;
+}
+.HTML-tag {
+    background-color: #e34f26;
+}
+
+.CSS-tag {
+    background-color: #1572B6;
+}
+
+.React-tag {
+    background-color: #61DAFB;
+}
+
+.Vue-tag {
+    background-color: #4FC08D;
+}
+
+.Angular-tag {
+    background-color: #DD0031;
+}
+
+.Svelte-tag {
+    background-color: #ff3e00;
+}
+
+.Bootstrap-tag {
+    background-color: #7952b3;
+}
+
+.TailwindCSS-tag {
+    background-color: #06B6D4;
+}
+
+.MUI-tag {
+    background-color: #007FFF;
+}
+.PHP-tag {
+    background-color: #777BB4;
+}
+
+.MySQL-tag {
+    background-color: #4479A1;
+}
+
+.Python-tag {
+    background-color: #3776AB;
+}
+
+.NodeJS-tag {
+    background-color: #339933;
+}
+
+.ExpressJS-tag {
+    background-color: #339933;
+}
+
+.AWS-tag {
+    background-color: #FF9900;
+}
+.RESTAPI-tag {
+    background-color: #5F5F5F;
+}

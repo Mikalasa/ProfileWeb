@@ -1,0 +1,42 @@
+export const projects = [
+    {
+        title: "Todo List",
+        imageURL: "/projectImage/todolist.png",
+        url: 'https://stringhotpot.com/',
+        repo: '',
+        description: `A simple todo list app with a dark mode option`,
+        techStack: ["JavaScript", "HTML", "CSS", "PHP", "MySQL"],
+    },
+    {
+        title: "Encrypt & Decrypt",
+        imageURL: "/projectImage/encrypt.png",
+        url: 'https://mikalasa.github.io/cryption-app/CaesarCipher/Encryption',
+        repo: '',
+        description: `A simple todo list app with a dark mode option`,
+        techStack: ["React", "Sass", "TailwindCSS", "NodeJS", "ExpressJS", "RESTAPI", "MySQL", "AWS"],
+    },
+    {
+        title: "MineSweeper",
+        imageURL: "/projectImage/mines.png",
+        url: 'https://mikalasa.github.io/minesweeper/',
+        repo: '',
+        description: `A simple todo list app with a dark mode option`,
+        techStack: ["React", "CSS", "JavaScript"],
+    },
+    {
+        title: "Flypper Bird",
+        imageURL: "/projectImage/bird.png",
+        url: '',
+        repo: '',
+        description: `A simple todo list app with a dark mode option`,
+        techStack: ["JavaScript", "HTML", "CSS"],
+    },
+    {
+        title: "Travel Webpage",
+        imageURL: "/projectImage/travelWeb.png",
+        url: 'https://mikalasa.github.io/nz-travel-web/?#',
+        repo: '',
+        description: `A simple todo list app with a dark mode option`,
+        techStack: ["React", "TailwindCSS"],
+    },
+]

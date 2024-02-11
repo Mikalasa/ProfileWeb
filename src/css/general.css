@@ -1,0 +1,27 @@
+.App {
+    position: relative;
+    width: 100%;
+}
+body {
+    background: black;
+    scroll-behavior: auto;
+}
+
+.gradient-transition {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(180deg, rgb(25, 25, 25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.violet-gradient {
+    background: #FF7F50;
+    background: linear-gradient(-90deg, #FF7F50 0%, rgba(60, 51, 80, 0) 100%);
+    background: -webkit-linear-gradient(
+            -90deg,
+            #FF7F50 0%,
+            rgba(60, 51, 80, 0) 100%
+    );
+}
+
+

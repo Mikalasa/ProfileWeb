@@ -1,1 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Custom CSS */
+@import "css/general.css";
+@import "css/container.css";
+@import "css/canvasLoader.css";
+@import "css/card.css";
+@import "css/custom-css.css";
+
+.webgl-iframe-wrapper {
+    pointer-events: auto;
+}
+.webgl-iframe {
+    border: none;
+    width: 1540px;
+    height: 840px;
+}

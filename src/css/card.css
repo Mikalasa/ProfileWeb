@@ -1,0 +1,62 @@
+.skill-card {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.object-cover {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.project-card {
+    width: 20rem;
+    height: 30rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity: 0.85;
+    border-radius: 15px;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.project-img-box {
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    position: relative;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: translateZ(20px);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-text-box {
+    padding: 0.5rem;
+    height: 40%;
+}
+.project-cover {
+    width: calc(100% + 20px);
+    height: auto;
+}
+
+.tech-stack-tag {
+    background-color: #FF7F50;
+    color: #fff;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+.github-icon {
+    width: 2rem;
+    height: 2rem;
+}
