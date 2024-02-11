@@ -49,7 +49,7 @@ const SkillCard = ({ skill, custom }) => {
                         }}
                     />
 
-                    <img src={skill.logoURL} alt={`${skill.title} logo`}
+                    <img src={process.env.PUBLIC_URL + skill.logoURL} alt={`${skill.title} logo`}
                          className="object-cover absolute"/>
                 </motion.div>
             </Tilt>

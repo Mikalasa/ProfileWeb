@@ -28,7 +28,7 @@ const ProjectCard = ({ project, custom }) => {
                                 transition={{duration: 0.2}}
                     >
                         <motion.img
-                            src={project.imageURL}
+                            src={process.env.PUBLIC_URL + project.imageURL}
                             alt={`${project.title} image`}
                             className="project-cover"
                             whileHover={{scale: 1.2}}
@@ -39,7 +39,7 @@ const ProjectCard = ({ project, custom }) => {
                         <div className='flex justify-between'>
                             <h3 className='text-black font-bold text-[24px]'>{project.title}</h3>
                             <motion.img
-                                src='/github-mark.png'
+                                src={process.env.PUBLIC_URL + '/github-mark.png'}
                                 className="github-icon"
                                 whileHover={{scale: 1.3}}
                                 transition={{duration: 0.3}}
