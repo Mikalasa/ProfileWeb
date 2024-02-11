@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/StingXProfile/static/css/main.11ad8d70.css",
+    "main.js": "/StingXProfile/static/js/main.2ee86fa1.js",
+    "static/media/close.svg": "/StingXProfile/static/media/close.8de6460f269d97bdef87c899c2b54e45.svg",
+    "static/media/menu.svg": "/StingXProfile/static/media/menu.a14e08da817ed339d3849bc81037592d.svg",
+    "index.html": "/StingXProfile/index.html",
+    "main.11ad8d70.css.map": "/StingXProfile/static/css/main.11ad8d70.css.map",
+    "main.2ee86fa1.js.map": "/StingXProfile/static/js/main.2ee86fa1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11ad8d70.css",
+    "static/js/main.2ee86fa1.js"
+  ]
+}
