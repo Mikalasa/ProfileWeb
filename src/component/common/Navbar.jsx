@@ -43,7 +43,7 @@ const Navbar = () => {
                 >
                     <p className='text-white text-[18px] font-bold cursor-pointer flex '>
                         Xingyi &nbsp;
-                        <span className='sm:block hidden'> | Full-Stack Developer</span>
+                        <span className='sm:block hidden'> | Web Developer</span>
                     </p>
                 </Link>
 
@@ -56,7 +56,7 @@ const Navbar = () => {
                             } hover:text-white text-[18px] font-medium cursor-pointer`}
                             onClick={() => setActive(nav.title)}
                         >
-                            <a href={`#${nav.id}`}>{nav.title}</a>
+                            <a>{nav.title}</a>
                         </li>
                     ))}
                 </ul>

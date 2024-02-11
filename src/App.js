@@ -1,6 +1,6 @@
 import StarsCanvas from "./component/canvas/StarsBG";
 import Navbar from "./component/common/Navbar";
-import {BrowserRouter} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import TheThinkerCanvas from "./component/canvas/TheThinker";
 import Projects from "./component/layout/Projects";
 import HeroInfo from "./component/content/HeroInfo";
@@ -20,7 +20,7 @@ function App() {
     }, []);
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className="App">
                 <Navbar/>
                 <div className="hero-container layout-container">
@@ -38,7 +38,7 @@ function App() {
                     <WebglPc/>
                 </div>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 

@@ -19,7 +19,7 @@ export const navLinks = [
 export const heroText = {
     title_f: "Hi, I'm ",
     title_l: "Xingyi",
-    description: "I'm a full-stack web developer with a passion for creating beautiful Web APP."
+    description: "I'm a Web developer with a passion for creating beautiful Web APP."
 }
 
 export const projectOverView = {
