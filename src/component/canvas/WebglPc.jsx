@@ -22,21 +22,22 @@ const MacModel = ({startAnimation}) => {
 
     return (
         <>
-            <ambientLight intensity={0.25} color={"#0816ad"}/>
+            <ambientLight intensity={1} color={"#ffffff"}/>
             <directionalLight
                 ref={dirLightRef}
-                intensity={0.5}
+                intensity={0.3}
                 position={[4, -1, 10]}
                 castShadow
-                shadow-mapSize-width={1024}
-                shadow-mapSize-height={1024}
+                shadow-mapSize-width={512}
+                shadow-mapSize-height={512}
+                shadow-radius={10}
             />
-            <pointLight position={[0, 0, 8]} intensity={20} color={"#7cb3c4"} castShadow shadow-mapSize-width={1024}
-                        shadow-mapSize-height={1024}/>
-            <pointLight position={[-7, 1, 8]} intensity={400} color={"#d24e4e"} castShadow shadow-mapSize-width={1024}
-                        shadow-mapSize-height={1024}/>
-            <pointLight position={[2, 1, -8]} intensity={50} color={"#a308ef"} castShadow shadow-mapSize-width={1024}
-                        shadow-mapSize-height={1024}/>
+            <pointLight position={[0, 0, 6]} intensity={40} color={"#7cb3c4"} castShadow shadow-mapSize-width={512}
+                        shadow-mapSize-height={512} shadow-radius={10}/>
+            <pointLight position={[-7, 1, 8]} intensity={100} color={"#d24e4e"} castShadow shadow-mapSize-width={512}
+                        shadow-mapSize-height={512} shadow-radius={10}/>
+            <pointLight position={[2, 1, -8]} intensity={50} color={"#a308ef"} castShadow shadow-mapSize-width={512}
+                        shadow-mapSize-height={512} shadow-radius={10}/>
             <rectAreaLight
                 width={3.5}
                 height={2.65}
@@ -72,7 +73,7 @@ const Wall = () => {
         canvas.width = canvas.height = size;
         const context = canvas.getContext('2d');
         const gradient = context.createLinearGradient(0, 0, size, size);
-        gradient.addColorStop(0, '#484848'); // start color
+        gradient.addColorStop(0, '#333232'); // start color
         gradient.addColorStop(1, '#212121'); // end color
         context.fillStyle = gradient;
         context.fillRect(0, 0, size, size);

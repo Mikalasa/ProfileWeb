@@ -27,18 +27,16 @@ const HeroModel = () => {
                 intensity={0.25}
                 position={[-3, 5, 6]}
                 castShadow
-                shadow-mapSize-width={2048}
-                shadow-mapSize-height={2048}
+                shadow-mapSize-width={512}
+                shadow-mapSize-height={512}
+                shadow-radius={10}
             />
-            {/* 主光源 */}
-            <pointLight intensity={10} position={[-1, 5, 7]} castShadow shadow-mapSize-width={2048}
-                        shadow-mapSize-height={2048} shadow-radius={10}/>
-            {/* 背光 */}
-            <pointLight intensity={20} position={[-8, 6, -3]}  castShadow shadow-mapSize-width={2048}
-                        shadow-mapSize-height={2048} shadow-radius={10}/>
-            {/* 填充光 */}
-            <pointLight intensity={40} position={[-10, 3, 7]} castShadow shadow-mapSize-width={2048}
-                        shadow-mapSize-height={2048} shadow-radius={10}/>
+            <pointLight intensity={10} position={[-1, 5, 7]} castShadow shadow-mapSize-width={512}
+                        shadow-mapSize-height={512} shadow-radius={10}/>
+            <pointLight intensity={20} position={[-8, 6, -3]}  castShadow shadow-mapSize-width={512}
+                        shadow-mapSize-height={512} shadow-radius={10}/>
+            <pointLight intensity={40} position={[-10, 3, 7]} castShadow shadow-mapSize-width={512}
+                        shadow-mapSize-height={512} shadow-radius={10}/>
             <Float rotateOnAxis={1} rotationIntensity={1}>
                 <mesh>
                     <primitive object={scene.scene} scale={3.5} position={[-5.0, -0.5, 5]}

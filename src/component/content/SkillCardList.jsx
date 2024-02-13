@@ -24,7 +24,7 @@ const SkillCard = ({ skill, custom }) => {
                     <motion.div
                         className="absolute"
                         initial={{rotate: 0, opacity: 0.5}}
-                        animate={{rotate: 360, opacity: [0.5, 1, 0.5]}}
+                        animate={{rotate: 360, opacity: [0.2, 1, 0.2]}}
                         transition={{
                             rotate: {
                                 repeat: Infinity,

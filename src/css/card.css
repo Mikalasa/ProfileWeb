@@ -5,8 +5,8 @@
 }
 
 .object-cover {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     z-index: 3;
     top: 50%;
@@ -15,18 +15,33 @@
     background-color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
-
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 .project-card {
     width: 20rem;
     height: 30rem;
-    background-color: rgba(255, 255, 255, 0.85);
+    /*background-color: rgba(255, 255, 255, 0.85);*/
+    /*background: linear-gradient(45deg, rgba(138, 43, 226, 0.5), rgba(74, 0, 224, 0.5), rgba(142, 45, 226, 0.5));*/
+    /*background-size: 300% 300%;*/
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     opacity: 0.85;
     border-radius: 15px;
-    color: #fff;
     padding: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgb(243, 243, 243);
+    animation: gradientFlow 10s ease infinite;
+    /*background: linear-gradient(45deg, rgba(238, 119, 82, 0.7), rgba(231, 60, 126, 0.7), rgba(35, 166, 213, 0.7), rgba(35, 213, 171, 0.7));*/
+    background: linear-gradient(45deg, rgba(138, 43, 226, 0.5), rgba(74, 0, 224, 0.5), rgba(49, 220, 174, 0.5), rgba(74, 20, 140, 0.5));
+    background-size: 300% 300%;
 }
 
 .project-img-box {

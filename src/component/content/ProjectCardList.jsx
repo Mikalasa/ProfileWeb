@@ -37,7 +37,7 @@ const ProjectCard = ({ project, custom }) => {
                     </motion.div>
                     <div className='mt-5 project-text-box'>
                         <div className='flex justify-between'>
-                            <h3 className='text-black font-bold text-[24px]'>{project.title}</h3>
+                            <h3 className='text-white font-bold text-[24px]'>{project.title}</h3>
                             <motion.img
                                 src={process.env.PUBLIC_URL + '/github-mark.png'}
                                 className="github-icon"
@@ -45,7 +45,7 @@ const ProjectCard = ({ project, custom }) => {
                                 transition={{duration: 0.3}}
                             />
                         </div>
-                        <p className='mt-2 text-gray-700 text-[14px]'>{project.description}</p>
+                        <p className='mt-2 text-gray-100 text-[14px]'>{project.description}</p>
                     </div>
 
                     <div className='mt-4 flex flex-wrap gap-2 project-tag-box'>
