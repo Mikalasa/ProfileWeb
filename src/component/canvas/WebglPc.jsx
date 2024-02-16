@@ -22,7 +22,7 @@ const MacModel = ({startAnimation}) => {
 
     return (
         <>
-            <ambientLight intensity={1} color={"#ffffff"}/>
+            <ambientLight intensity={2} color={"#ffffff"}/>
             <directionalLight
                 ref={dirLightRef}
                 intensity={0.3}
@@ -32,26 +32,18 @@ const MacModel = ({startAnimation}) => {
                 shadow-mapSize-height={512}
                 shadow-radius={10}
             />
-            <pointLight position={[0, 0, 6]} intensity={40} color={"#7cb3c4"} castShadow shadow-mapSize-width={512}
+            <pointLight position={[4, 0, 8]} intensity={100} color={"#7cb3c4"} castShadow shadow-mapSize-width={512}
                         shadow-mapSize-height={512} shadow-radius={10}/>
             <pointLight position={[-7, 1, 8]} intensity={100} color={"#d24e4e"} castShadow shadow-mapSize-width={512}
                         shadow-mapSize-height={512} shadow-radius={10}/>
             <pointLight position={[2, 1, -8]} intensity={50} color={"#a308ef"} castShadow shadow-mapSize-width={512}
                         shadow-mapSize-height={512} shadow-radius={10}/>
-            <rectAreaLight
-                width={3.5}
-                height={2.65}
-                intensity={10}
-                color={'#ff6900'}
-                rotation={[(-4.55 * Math.PI) / 180, 0, 0]}
-                position={[0, 0, 2.75]}
-            />
             <primitive
                 object={scene.scene} scale={1} position={[3, -3, 4]}
                 rotation={[0, -Math.PI / 2, 0]}
             />
             <Html
-                position={[0, 0, 2.7]}
+                position={[0, 0, 2.8]}
                 transform occlude
                 wrapperClass="webgl-iframe-wrapper"
                 distanceFactor={1.65}
@@ -59,7 +51,7 @@ const MacModel = ({startAnimation}) => {
             >
                 <iframe
                     className="webgl-iframe"
-                    src="https://mikalasa.github.io/minesweeper/"
+                    src="https://mikalasa.github.io/nz-travel-web/?#"
                 />
             </Html>
         </>
@@ -98,6 +90,8 @@ const Wall = () => {
         </mesh>
     );
 };
+
+
 
 
 function WebglPc() {

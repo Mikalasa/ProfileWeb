@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import {customTailwind} from "../../constants/custom-tailwind";
 import { fadeIn, textVariant } from "../../utility/custom-motion";
-import { projectOverView } from "../../constants/custom-config";
+import {IntroductionOverView} from "../../constants/custom-config";
 import { useInView } from 'react-intersection-observer';
 
 function Overview() {
@@ -27,7 +27,7 @@ function Overview() {
                 animate={inView ? "show" : "hidden"}
                 className='mt-4 text-[#C0C0C0] text-[17px] max-w-3xl leading-[30px]'
             >
-                {projectOverView.paragraph}
+                {IntroductionOverView.paragraph}
             </motion.p>
         </>
     );

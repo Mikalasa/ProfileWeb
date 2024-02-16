@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import {customTailwind} from "../../constants/custom-tailwind";
 import { fadeIn, textVariant } from "../../utility/custom-motion";
-import { projectOverView } from "../../constants/custom-config";
+import {aboutOverView} from "../../constants/custom-config";
 import { useInView } from 'react-intersection-observer';
 
 function About() {
@@ -10,7 +10,7 @@ function About() {
         rootMargin: "-100px 0px",
     });
     return (
-        <div className="projects-introduction flex flex-col items-center justify-center">
+        <div className="projects-introduction mt-10 flex flex-col items-center justify-center">
             <motion.div
                 ref={ref}
                 className={`mt-14`} variants={textVariant(0)}
@@ -26,7 +26,7 @@ function About() {
                 animate={inView ? "show" : "hidden"}
                 className='mt-4 text-[#C0C0C0] text-[17px] max-w-3xl leading-[30px]'
             >
-                {projectOverView.paragraph}
+                {aboutOverView.paragraph}
             </motion.p>
         </div>
     );

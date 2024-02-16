@@ -35,7 +35,7 @@ const ProjectCard = ({ project, custom }) => {
                             transition={{duration: 0.3}}
                         />
                     </motion.div>
-                    <div className='mt-5 project-text-box'>
+                    <div className='mt-4 project-text-box'>
                         <div className='flex justify-between'>
                             <h3 className='text-white font-bold text-[24px]'>{project.title}</h3>
                             <motion.img
@@ -43,16 +43,27 @@ const ProjectCard = ({ project, custom }) => {
                                 className="github-icon"
                                 whileHover={{scale: 1.3}}
                                 transition={{duration: 0.3}}
+                                onClick={(e) => {
+                                    window.open(project.repo, "_blank");
+                                }}
                             />
                         </div>
-                        <p className='mt-2 text-gray-100 text-[14px]'>{project.description}</p>
+                        <ul className='list-disc pl-5 mt-2 text-gray-100 text-[12px]'>
+                            {project.point && project.point.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+
+                        </ul>
+                        <p className='mt-2 text-gray-100 text-[14px]'>
+                            {project.description}
+                        </p>
                     </div>
 
                     <div className='mt-4 flex flex-wrap gap-2 project-tag-box'>
                         {project.techStack.map((tag, index) => (
                             <p
                                 key={index}
-                                className={`text-[14px] ${tag + '-tag'} p-1 tech-stack-tag`}
+                                className={`text-[12px] ${tag + '-tag'} p-1 tech-stack-tag`}
                             >
                                 {tag}
                             </p>
