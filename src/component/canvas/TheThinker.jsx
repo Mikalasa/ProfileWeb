@@ -21,7 +21,8 @@ const HeroModel = () => {
     }, [scene]);
 
     const scale = isMobile ? 2.5 : 3.5;
-    const position = isMobile ? [-5.0, 1, 5] : [-5.0, -0.5, 5];
+    const position = isMobile ? [-1.8, 3, 10] : [-5.0, -0.5, 5];
+    const rotationIndex = isMobile ? 0.25 : 1;
 
     return (
         <>
@@ -41,7 +42,7 @@ const HeroModel = () => {
                         shadow-mapSize-height={512} shadow-radius={10}/>
             <pointLight intensity={40} position={[-10, 3, 7]} castShadow shadow-mapSize-width={512}
                         shadow-mapSize-height={512} shadow-radius={10}/>
-            <Float rotateOnAxis={1} rotationIntensity={1}>
+            <Float rotateOnAxis={rotationIndex} rotationIntensity={rotationIndex}>
                 <mesh>
                     <primitive object={scene.scene} scale={scale} position={position}
                                rotation={[-0.3, 2.5, -0.1]}/>
@@ -88,6 +89,10 @@ const GroundPlane = () => {
 
 
 const TheThinkerCanvas = () => {
+    const maxPolarAngle = isMobile ? Math.PI / 4 : Math.PI / 4;
+    const minPolarAngle = isMobile ? Math.PI / 3 : Math.PI / 3;
+    const minAzimuthAngle = isMobile ? -Math.PI / 12 : -Math.PI / 6;
+    const maxAzimuthAngle = isMobile ? Math.PI / 30 : Math.PI / 6;
     return (
         <div className="thinker-bg">
             <Canvas
@@ -99,10 +104,10 @@ const TheThinkerCanvas = () => {
                 <Suspense fallback={<CanvasLoader />}>
                     <OrbitControls
                         enableZoom={false}
-                        maxPolarAngle={Math.PI / 4}
-                        minPolarAngle={Math.PI / 3}
-                        minAzimuthAngle={-Math.PI / 6}
-                        maxAzimuthAngle={Math.PI / 6}
+                        maxPolarAngle={maxPolarAngle}
+                        minPolarAngle={minPolarAngle}
+                        minAzimuthAngle={minAzimuthAngle}
+                        maxAzimuthAngle={maxAzimuthAngle}
                     />
                     <HeroModel/>
                     <GroundPlane />
