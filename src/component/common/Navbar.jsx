@@ -33,7 +33,7 @@ const Navbar = () => {
         >
             <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
                 <div className="flex gap-4">
-                    <img src="/web-icon.png" className="h-[32px] w-[32px]"/>
+                    <img src={process.env.PUBLIC_URL + "/web-icon.png"} className="h-[32px] w-[32px]" />
                     <a
                         href="#"
                         className='flex items-center gap-2'

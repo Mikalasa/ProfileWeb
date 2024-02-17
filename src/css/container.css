@@ -53,6 +53,9 @@
 }
 
 /* about */
+.about-container {
+    z-index: 5;
+}
 .mac-bg {
     height: 900px;
 }

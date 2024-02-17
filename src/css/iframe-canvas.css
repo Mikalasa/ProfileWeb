@@ -11,6 +11,10 @@
     height: 1200px;
     border-radius: 3rem;
 }
+.iframe-iphone-container {
+    position: fixed;
+    transform: translate(-50%, -50%);
+}
 canvas {
     touch-action: pan-y;
 }
