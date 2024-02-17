@@ -6,11 +6,11 @@
 
 /* each container */
 .hero-container {
-    height: 100vh;
+
 }
 
 .projects-container {
-    /*height: 200rem;*/
+
 }
 
 /* Hero Section */
@@ -54,5 +54,5 @@
 
 /* about */
 .mac-bg {
-    height: 800px;
+    height: 900px;
 }

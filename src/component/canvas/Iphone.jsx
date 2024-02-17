@@ -11,8 +11,10 @@ function Model({ setCanRotate }) {
     };
     return (
         <>
-            <Environment preset="city" />
             <ambientLight intensity={10} color={"#ffffff"}/>
+            <pointLight position={[-0.25, 5, 0]} intensity={100} color={"#ebebee"} />
+            <pointLight position={[4, 0, 0]} intensity={50} color={"#ebebee"} />
+            <pointLight position={[-6, -1, 0]} intensity={50} color={"#ebebee"} />
             <mesh
                 ref={meshRef}
                 onPointerDown={handlePointerDown}
@@ -39,7 +41,6 @@ function Iphone() {
     const [canRotate, setCanRotate] = useState(false);
     return (
         <div className="mac-bg">
-            <h1>Apple Mac</h1>
             <Canvas
                 shadows
                 dpr={[1, 2]}

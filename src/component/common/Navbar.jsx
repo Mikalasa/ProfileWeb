@@ -27,36 +27,38 @@ const Navbar = () => {
         <nav
             className={`${
                 customTailwind.paddingX
-            } w-full flex items-center py-5 fixed top-0 z-20 custom-navbar ${
+            } w-full flex items-center py-4 fixed top-0 z-20 custom-navbar ${
                 scrolled ? "custom-navbar-bg" : "bg-transparent"
             }`}
         >
             <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-                <a
-                    href="#"
-                    className='flex items-center gap-2'
-                    onClick={() => {
-                        setActive("");
-                        window.scrollTo(0, 0);
-                    }}
-                >
-                    <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-                        Xingyi &nbsp;
-                        <span className='sm:block hidden'> | Web Developer</span>
-                    </p>
-                </a>
+                <div className="flex gap-4">
+                    <img src="/web-icon.png" className="h-[32px] w-[32px]"/>
+                    <a
+                        href="#"
+                        className='flex items-center gap-2'
+                        onClick={() => {
+                            setActive("");
+                            window.scrollTo(0, 0);
+                        }}
+                    >
+                        <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+                            Xingyi &nbsp;
+                            <span className='sm:block hidden'> | Front-end Developer</span>
+                        </p>
+                    </a>
+                </div>
 
                 <ul className='list-none hidden sm:flex flex-row gap-10'>
                     {navLinks.map((nav) => (
                         <li
                             key={nav.id}
-                            className={`${
-                                active === nav.title ? "text-white" : "text-white"
-                            } hover:text-white text-[18px] font-medium cursor-pointer`}
+                            className={`hover:text-gray-300 text-white text-[18px] font-medium cursor-pointer`}
                             onClick={() => setActive(nav.title)}
                         >
                             <a href={`#${nav.id}`}>{nav.title}</a>
                         </li>
+
                     ))}
                 </ul>
 

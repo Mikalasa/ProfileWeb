@@ -6,7 +6,6 @@ import HeroInfo from "./component/content/HeroInfo";
 import {useEffect, useRef, useState} from "react";
 import MouseScrollicon from "./component/common/MouseScrollicon";
 import WebglPc from "./component/canvas/WebglPc";
-import About from "./component/content/About";
 import { isMobile } from 'react-device-detect';
 import Iphone from "./component/canvas/Iphone";
 
@@ -38,7 +37,7 @@ function App() {
     return (
         <div className="App">
             <Navbar/>
-            <div className="hero-container layout-container">
+            <div className="hero-container h-screen layout-container">
                 <HeroInfo/>
                 <TheThinkerCanvas/>
                 <MouseScrollicon/>
@@ -47,7 +46,6 @@ function App() {
             <div className="projects-container layout-container">
                 <Projects/>
                 <StarsCanvas/>
-
             </div>
             <div ref={webglPcRef} className="about-container layout-container">
                 {!isMobile && loadWebglPc ? <WebglPc /> : loadWebglPc && <Iphone />}

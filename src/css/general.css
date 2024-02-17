@@ -4,10 +4,11 @@
 }
 body {
     background: black;
-    scroll-behavior: smooth;
-
 }
 
+html {
+    scroll-behavior: smooth;
+}
 .gradient-transition {
     position: absolute;
     width: 100%;

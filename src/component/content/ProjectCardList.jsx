@@ -15,7 +15,7 @@ const ProjectCard = ({ project, custom }) => {
     const cardContent = (
         <motion.div
             ref={ref}
-            className="project-card shadow-lg flex flex-col relative my-8 cursor-pointer"
+            className="project-card shadow-lg flex flex-col relative my-4 sm:my-8 cursor-pointer"
             variants={fadeIn("up", "spring", custom * 0.1, 0.75)}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
@@ -86,7 +86,7 @@ const ProjectCard = ({ project, custom }) => {
 
 function ProjectCardList() {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-0 p-4 mt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-0 sm:gap-4 p-4 mt-14">
             {projects.map((project, index) => (
                 <div key={index} className="flex items-center justify-center">
                     <ProjectCard project={project} custom={index}/>

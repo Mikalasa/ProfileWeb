@@ -9,7 +9,7 @@
 .webgl-iframe-iphone {
     width: 680px;
     height: 1200px;
-    border-radius: 1rem;
+    border-radius: 3rem;
 }
 canvas {
     touch-action: pan-y;
@@ -19,7 +19,7 @@ canvas {
     position: absolute;
     margin-left: auto;
     width: 200px;
-    top: 0%;
+    top: 0;
     height: 100vh;
     /*background-color: white;*/
 }

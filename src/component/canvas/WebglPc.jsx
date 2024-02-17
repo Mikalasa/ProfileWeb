@@ -32,7 +32,7 @@ const MacModel = ({startAnimation}) => {
                 shadow-mapSize-height={512}
                 shadow-radius={10}
             />
-            <pointLight position={[4, 0, 8]} intensity={100} color={"#7cb3c4"} castShadow shadow-mapSize-width={512}
+            <pointLight position={[4, 0, 8]} intensity={50} color={"#7cb3c4"} castShadow shadow-mapSize-width={512}
                         shadow-mapSize-height={512} shadow-radius={10}/>
             <pointLight position={[-7, 1, 8]} intensity={100} color={"#d24e4e"} castShadow shadow-mapSize-width={512}
                         shadow-mapSize-height={512} shadow-radius={10}/>
@@ -65,7 +65,7 @@ const Wall = () => {
         canvas.width = canvas.height = size;
         const context = canvas.getContext('2d');
         const gradient = context.createLinearGradient(0, 0, size, size);
-        gradient.addColorStop(0, '#333232'); // start color
+        gradient.addColorStop(0, '#1e1e1e'); // start color
         gradient.addColorStop(1, '#212121'); // end color
         context.fillStyle = gradient;
         context.fillRect(0, 0, size, size);
@@ -97,7 +97,6 @@ const Wall = () => {
 function WebglPc() {
     return (
         <div className="mac-bg">
-            <h1>Apple Mac</h1>
             <Canvas
                 shadows
                 dpr={[1, 2]}

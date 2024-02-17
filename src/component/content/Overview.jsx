@@ -13,11 +13,12 @@ function Overview() {
         <>
             <motion.div
                 ref={ref}
+                id="overview"
                 className={`mt-14`} variants={textVariant(0)}
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}>
                 <p className={customTailwind.sectionSubText}>Introduction Skills</p>
-                <h2 className={customTailwind.sectionHeadText}>Overview.</h2>
+                <h2 className={customTailwind.sectionHeadText + " mt-5"}>Overview.</h2>
             </motion.div>
 
             <motion.p
@@ -25,7 +26,7 @@ function Overview() {
                 variants={fadeIn("", "", 0.3, 4)}
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}
-                className='mt-4 text-[#C0C0C0] text-[17px] max-w-3xl leading-[30px] text-justify'
+                className='mt-4 text-[#C0C0C0] text-[17px] max-w-3xl leading-[30px] '
             >
                 {IntroductionOverView.paragraph}
             </motion.p>

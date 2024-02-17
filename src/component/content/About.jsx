@@ -10,7 +10,7 @@ function About() {
         rootMargin: "-100px 0px",
     });
     return (
-        <div className="projects-introduction mt-10 flex flex-col items-center justify-center">
+        <div id="about" className="projects-introduction mt-10 flex flex-col items-center justify-center mb-24">
             <motion.div
                 ref={ref}
                 className={`mt-14`} variants={textVariant(0)}
@@ -24,7 +24,7 @@ function About() {
                 variants={fadeIn("", "", 0.3, 4)}
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}
-                className='mt-4 text-[#C0C0C0] text-[17px] max-w-3xl leading-[30px] text-justify'
+                className='mt-4 text-[#C0C0C0] text-[17px] max-w-3xl leading-[30px]'
             >
                 {aboutOverView.paragraph}
             </motion.p>
