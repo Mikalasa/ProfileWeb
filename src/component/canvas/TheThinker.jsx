@@ -1,11 +1,11 @@
-import React, {Suspense, useEffect, useMemo, useRef} from "react";
+import React, {Suspense, useEffect, useMemo, useRef, useState} from "react";
 import {Canvas} from "@react-three/fiber";
 import {Float, OrbitControls, Preload, useGLTF} from "@react-three/drei";
 import {CanvasTexture, LinearFilter} from "three";
 import CanvasLoader from "./CanvasLoader";
 import {isMobile} from "react-device-detect";
 
-const HeroModel = () => {
+const ThinkerModel = () => {
     const scene = useGLTF("./the_thinker.glb");
     const dirLightRef = useRef();
 
@@ -109,7 +109,7 @@ const TheThinkerCanvas = () => {
                         minAzimuthAngle={minAzimuthAngle}
                         maxAzimuthAngle={maxAzimuthAngle}
                     />
-                    <HeroModel/>
+                    <ThinkerModel />
                     <GroundPlane />
                 </Suspense>
                 <Preload all />

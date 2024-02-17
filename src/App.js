@@ -37,7 +37,6 @@ function App() {
 
     return (
         <div className="App">
-            {console.log('Is mobile:', isMobile)}
             <Navbar/>
             <div className="hero-container layout-container">
                 <HeroInfo/>
@@ -51,7 +50,7 @@ function App() {
 
             </div>
             <div ref={webglPcRef} className="about-container layout-container">
-                {!isMobile && loadWebglPc ? <WebglPc /> : <Iphone />}
+                {!isMobile && loadWebglPc ? <WebglPc /> : loadWebglPc && <Iphone />}
             </div>
         </div>
     );

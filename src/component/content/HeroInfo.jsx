@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion';
 import { heroText} from "../../constants/custom-config";
 import {customTailwind} from "../../constants/custom-tailwind";
+import {isMobile} from "react-device-detect";
 
 function HeroInfo() {
-  return (
-      <motion.div
+    const isMobileCanvasCoverDiv = (
+        <>
+            <div className="isMobileCanvasCoverDiv-right"></div>
+            <div className="isMobileCanvasCoverDiv-buttom"></div>
+        </>
+    )
+    return (
+        <motion.div
           className={`hero-info ${customTailwind.paddingX} flex flex-row items-start gap-5`}
           initial={{opacity: 0, scale: 0.5}}
           animate={{opacity: 1, scale: 1}}
@@ -23,6 +30,9 @@ function HeroInfo() {
                   {heroText.description}
               </p>
           </motion.div>
+          {isMobile ? (
+              isMobileCanvasCoverDiv
+          ) : null}
       </motion.div>
   )
 }

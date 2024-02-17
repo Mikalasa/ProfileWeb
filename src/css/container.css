@@ -8,9 +8,7 @@
 .hero-container {
     height: 100vh;
 }
-.about-container {
-    height: 100vh;
-}
+
 .projects-container {
     /*height: 200rem;*/
 }
@@ -56,5 +54,5 @@
 
 /* about */
 .mac-bg {
-    height: 100vh;
+    height: 800px;
 }
