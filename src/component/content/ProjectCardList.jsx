@@ -31,7 +31,7 @@ const ProjectCard = ({ project, custom }) => {
                             src={process.env.PUBLIC_URL + project.imageURL}
                             alt={`${project.title} image`}
                             className="project-cover"
-                            whileHover={{scale: 1.2}}
+                            whileHover={{scale: 1.1}}
                             transition={{duration: 0.3}}
                         />
                     </motion.div>
@@ -79,7 +79,7 @@ const ProjectCard = ({ project, custom }) => {
 
 function ProjectCardList() {
     return (
-        <div className="grid grid-cols-3 gap-4 p-4 mt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-0 p-4 mt-14">
             {projects.map((project, index) => (
                 <div key={index} className="flex items-center justify-center">
                     <ProjectCard project={project} custom={index}/>

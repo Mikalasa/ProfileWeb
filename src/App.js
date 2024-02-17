@@ -1,6 +1,5 @@
 import StarsCanvas from "./component/canvas/StarsBG";
 import Navbar from "./component/common/Navbar";
-import {BrowserRouter} from "react-router-dom";
 import TheThinkerCanvas from "./component/canvas/TheThinker";
 import Projects from "./component/layout/Projects";
 import HeroInfo from "./component/content/HeroInfo";
@@ -8,6 +7,8 @@ import {useEffect, useRef, useState} from "react";
 import MouseScrollicon from "./component/common/MouseScrollicon";
 import WebglPc from "./component/canvas/WebglPc";
 import About from "./component/content/About";
+import { isMobile } from 'react-device-detect';
+import Iphone from "./component/canvas/Iphone";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
 
     return (
         <div className="App">
+            {console.log('Is mobile:', isMobile)}
             <Navbar/>
             <div className="hero-container layout-container">
                 <HeroInfo/>
@@ -46,10 +48,10 @@ function App() {
             <div className="projects-container layout-container">
                 <Projects/>
                 <StarsCanvas/>
+
             </div>
-            <About/>
             <div ref={webglPcRef} className="about-container layout-container">
-                {loadWebglPc && <WebglPc/>}
+                {!isMobile && loadWebglPc ? <WebglPc /> : <Iphone />}
             </div>
         </div>
     );

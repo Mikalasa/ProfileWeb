@@ -3,6 +3,7 @@ import {Canvas} from "@react-three/fiber";
 import {Float, OrbitControls, Preload, useGLTF} from "@react-three/drei";
 import {CanvasTexture, LinearFilter} from "three";
 import CanvasLoader from "./CanvasLoader";
+import {isMobile} from "react-device-detect";
 
 const HeroModel = () => {
     const scene = useGLTF("./the_thinker.glb");
@@ -18,6 +19,9 @@ const HeroModel = () => {
             });
         }
     }, [scene]);
+
+    const scale = isMobile ? 2.5 : 3.5;
+    const position = isMobile ? [-5.0, 1, 5] : [-5.0, -0.5, 5];
 
     return (
         <>
@@ -39,7 +43,7 @@ const HeroModel = () => {
                         shadow-mapSize-height={512} shadow-radius={10}/>
             <Float rotateOnAxis={1} rotationIntensity={1}>
                 <mesh>
-                    <primitive object={scene.scene} scale={3.5} position={[-5.0, -0.5, 5]}
+                    <primitive object={scene.scene} scale={scale} position={position}
                                rotation={[-0.3, 2.5, -0.1]}/>
                 </mesh>
             </Float>
