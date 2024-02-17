@@ -17,3 +17,10 @@
     width: 1540px;
     height: 840px;
 }
+.webgl-iframe-iphone {
+    width: 680px;
+    height: 1300px;
+}
+canvas {
+    touch-action: none;
+}
