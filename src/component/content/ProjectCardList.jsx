@@ -43,6 +43,7 @@ const ProjectCard = ({ project, custom }) => {
                         whileHover={{scale: 1.3}}
                         transition={{duration: 0.3}}
                         onClick={(e) => {
+                            e.stopPropagation();
                             window.open(project.repo, "_blank");
                         }}
                     />

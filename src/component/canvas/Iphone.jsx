@@ -89,7 +89,7 @@ function Iphone() {
             >
                 <Suspense fallback={<CanvasLoader />}>
                     <PresentationControls
-                        snap={enableRotate} // 根据 enableRotate 状态启用或禁用旋转控制
+                        snap={enableRotate} // enableRotate is a boolean
                         config={{ tension: 170, friction: 26 }}
                         azimuth={[(-25 * Math.PI) / 180, (25 * Math.PI) / 180]}
                         polar={[(-5 * Math.PI) / 180, (15 * Math.PI) / 180]}

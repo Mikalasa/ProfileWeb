@@ -91,8 +91,8 @@ const GroundPlane = () => {
 const TheThinkerCanvas = () => {
     const maxPolarAngle = isMobile ? Math.PI / 4 : Math.PI / 4;
     const minPolarAngle = isMobile ? Math.PI / 3 : Math.PI / 3;
-    const minAzimuthAngle = isMobile ? -Math.PI / 12 : -Math.PI / 6;
-    const maxAzimuthAngle = isMobile ? Math.PI / 30 : Math.PI / 6;
+    const minAzimuthAngle = isMobile ? -Math.PI / 12 : -Math.PI / 8;
+    const maxAzimuthAngle = isMobile ? Math.PI / 30 : Math.PI / 12;
     return (
         <div className="thinker-bg">
             <Canvas
