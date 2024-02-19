@@ -3,21 +3,21 @@ export const projects = [
         title: "Todo List",
         imageURL: "/projectImage/todolist.png",
         url: 'https://stringhotpot.com/',
-        repo: 'https://github.com/Mikalasa/TodoBolg',
+        repo: 'https://github.com/Mikalasa/todo-list',
         point: [
             "Login and registration system.",
             "CRUD functionality.",
             "Circular statistical display and UI animations.",
             "Responsive UI for optimal all devices.",
         ],
-        description: `Developed using native JavaScript, HTML, CSS, with PHP as the backend language.`,
+        description: `Developed using pure JavaScript, HTML, CSS. Used PHP as the backend language.`,
         techStack: ["JavaScript", "HTML", "CSS", "PHP", "MySQL"],
     },
     {
         title: "Encrypt & Decrypt",
         imageURL: "/projectImage/encrypt.png",
         url: 'https://mikalasa.github.io/cryption-app/CaesarCipher/Encryption',
-        repo: '',
+        repo: 'https://github.com/Mikalasa/enctryption-and-decryption-webapp',
         point: [
             "Login and registration system.",
             "Encrypt user passwords with salt.",
@@ -52,7 +52,7 @@ export const projects = [
             "Menu system.",
             "Slider controls for game speed, pipe horizontal and vertical spacing.",
         ],
-        description: `Developed using native JavaScript and HTML's canvas.`,
+        description: `Developed using pure native JavaScript and HTML's canvas.`,
         techStack: ["JavaScript", "HTML", "CSS"],
     },
     {

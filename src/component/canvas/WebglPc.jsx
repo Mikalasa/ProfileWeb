@@ -5,7 +5,7 @@ import CanvasLoader from "./CanvasLoader";
 import {CanvasTexture, LinearFilter} from "three";
 
 const MacModel = ({startAnimation}) => {
-    const scene = useGLTF("./pc.glb");
+    const scene = useGLTF("/pc.glb");
     const dirLightRef = useRef();
 
     useEffect(() => {

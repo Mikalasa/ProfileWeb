@@ -42,7 +42,7 @@ function useLongPress(onLongPress, ms = 300) {
 
 
 function Model({ setCanRotate }) {
-    const { scene } = useGLTF('./iphone.gltf')
+    const { scene } = useGLTF('/iphone.gltf')
     return (
         <>
             <ambientLight intensity={10} color={"#ffffff"}/>
