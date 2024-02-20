@@ -6,7 +6,7 @@ import CanvasLoader from "./CanvasLoader";
 import {isMobile} from "react-device-detect";
 
 const ThinkerModel = () => {
-    const scene = useGLTF("/the_thinker.glb");
+    const scene = useGLTF("./the_thinker.glb");
     const dirLightRef = useRef();
 
     useEffect(() => {

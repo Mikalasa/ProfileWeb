@@ -5,7 +5,7 @@ import CanvasLoader from "./CanvasLoader";
 import {CanvasTexture, LinearFilter} from "three";
 
 const MacModel = ({startAnimation}) => {
-    const scene = useGLTF("/pc.glb");
+    const scene = useGLTF("./pc.glb");
     const dirLightRef = useRef();
 
     useEffect(() => {
@@ -39,11 +39,11 @@ const MacModel = ({startAnimation}) => {
             <pointLight position={[2, 1, -8]} intensity={50} color={"#a308ef"} castShadow shadow-mapSize-width={512}
                         shadow-mapSize-height={512} shadow-radius={10}/>
             <primitive
-                object={scene.scene} scale={1} position={[3, -3, 4]}
+                object={scene.scene} scale={1} position={[3, -2.8, 5.5]}
                 rotation={[0, -Math.PI / 2, 0]}
             />
             <Html
-                position={[0, 0, 2.8]}
+                position={[0, 0.2, 4.3]}
                 transform occlude
                 wrapperClass="webgl-iframe-wrapper"
                 distanceFactor={1.65}
@@ -51,7 +51,7 @@ const MacModel = ({startAnimation}) => {
             >
                 <iframe
                     className="webgl-iframe"
-                    src="https://mikalasa.github.io/nz-travel-web/?#"
+                    src="https://mikalasa.github.io/ProfileWeb-Iframe-About/"
                 />
             </Html>
         </>
