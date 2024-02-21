@@ -36,3 +36,13 @@ canvas {
     height: 300px;
     /*background-color: white;*/
 }
+
+.webgl-iframe-windows {
+    position: absolute;
+    transform: translate(-50%, -60%);
+}
+
+.webgl-iframe-mac {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}

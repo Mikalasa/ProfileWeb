@@ -4,9 +4,25 @@ import {Html, Preload, PresentationControls, useGLTF} from '@react-three/drei';
 import CanvasLoader from "./CanvasLoader";
 import {CanvasTexture, LinearFilter} from "three";
 
+
+function useOperatingSystem() {
+    const [os, setOs] = useState('');
+
+    useEffect(() => {
+        const userAgent = window.navigator.userAgent;
+        if (userAgent.includes('Win')) setOs('windows');
+        if (userAgent.includes('Mac')) setOs('mac');
+        // Add more conditions if you want to detect other operating systems.
+    }, []);
+
+    return os;
+}
+
+
 const MacModel = ({startAnimation}) => {
     const scene = useGLTF("./pc.glb");
     const dirLightRef = useRef();
+    const os = useOperatingSystem();
 
     useEffect(() => {
         if (scene) {
@@ -50,7 +66,7 @@ const MacModel = ({startAnimation}) => {
                 rotation-x={(-4.55 * Math.PI) / 180}
             >
                 <iframe
-                    className="webgl-iframe"
+                    className={`webgl-iframe webgl-iframe-${os}`}
                     src="https://mikalasa.github.io/ProfileWeb-Iframe-About/"
                 />
             </Html>
@@ -90,8 +106,6 @@ const Wall = () => {
         </mesh>
     );
 };
-
-
 
 
 function WebglPc() {
