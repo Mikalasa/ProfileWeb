@@ -17,7 +17,6 @@ function Overview() {
                 className={`mt-14`} variants={textVariant(0)}
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}>
-                <p className={customTailwind.sectionSubText}>Introduction Skills</p>
                 <h2 className={customTailwind.sectionHeadText + " mt-10 sm:mt-5"}>Overview.</h2>
             </motion.div>
 

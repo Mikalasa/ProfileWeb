@@ -16,10 +16,10 @@ function About() {
                 className={`mt-14`} variants={textVariant(0)}
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}>
-                <h2 className={customTailwind.sectionHeadText}>About.</h2>
+                {/* <h2 className={customTailwind.sectionHeadText}>About.</h2> */}
             </motion.div>
 
-            <motion.p
+            {/* <motion.p
                 ref={ref}
                 variants={fadeIn("", "", 0.3, 4)}
                 initial="hidden"
@@ -27,7 +27,7 @@ function About() {
                 className='mt-4 text-[#C0C0C0] text-[17px] max-w-3xl leading-[30px]'
             >
                 {aboutOverView.paragraph}
-            </motion.p>
+            </motion.p> */}
         </div>
     );
 }
