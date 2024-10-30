@@ -25,6 +25,7 @@ function Model({ setCanRotate }) {
             >
                 <div className="iframe-iphone-container">
                     <iframe
+                        title={"iframe-iphone"}
                         className="webgl-iframe-iphone"
                         src="https://mikalasa.github.io/ProfileWeb-Iframe-About/"
                     />

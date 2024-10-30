@@ -43,6 +43,7 @@ function Flat() {
                         onLoad={handleImageLoad}
                     />
                     <iframe
+                        title={"iframe-flat"}
                         className="webgl-iframe-flat"
                         src="https://mikalasa.github.io/ProfileWeb-Iframe-About/"
                         style={{ height: `${iframeHeight}px` }}

@@ -83,6 +83,7 @@ const MacModel = ({ startAnimation }) => {
                     distanceFactor={1.65}
                 >
                     <iframe
+                        title={"iframe-pc"}
                         className={`webgl-iframe webgl-iframe-${os}`}
                         src="https://mikalasa.github.io/ProfileWeb-Iframe-About/"
                     />

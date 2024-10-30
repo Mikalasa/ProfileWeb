@@ -7,7 +7,10 @@ import {useEffect, useRef, useState} from "react";
 import MouseScrollicon from "./component/common/MouseScrollicon";
 import WebglPc from "./component/canvas/WebglPc";
 import { isMobile } from 'react-device-detect';
+
+/* eslint-disable no-unused-vars */
 import Iphone from "./component/canvas/Iphone";
+/* eslint-disable no-unused-vars */
 import Flat from "./component/canvas/Flat";
 
 
