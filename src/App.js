@@ -49,7 +49,7 @@ function App() {
             <div className="gradient-transition"></div>
             <div className="projects-container layout-container">
                 <Projects/>
-                <StarsCanvas/>
+                {isMobile ? <></> : <StarsCanvas/>}
             </div>
             <div ref={webglPcRef} className="about-container layout-container">
                 {!isMobile && loadWebglPc ? <WebglPc /> : loadWebglPc && <Flat />}

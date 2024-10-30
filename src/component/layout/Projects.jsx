@@ -3,6 +3,7 @@ import SkillCardList from "../content/SkillCardList";
 import ProjectCardList from "../content/ProjectCardList";
 import ProjectIntroduction from "../content/ProjectIntroduction";
 import About from "../content/About";
+import {isMobile} from "react-device-detect";
 
 function Projects() {
   return (
@@ -11,7 +12,7 @@ function Projects() {
         <SkillCardList />
         <ProjectIntroduction />
         <ProjectCardList />
-        <About/>
+        {isMobile ? <></> : <About />}
     </div>
   );
 }
