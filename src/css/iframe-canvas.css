@@ -11,10 +11,26 @@
     height: 820px;
     border-radius: 3rem;
 }
+.webgl-iframe-flat {
+    width: 85%;
+    height: 680px;
+    border-radius: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .iframe-iphone-container {
     position: fixed;
     transform: translate(-50%, -50%);
 }
+.iframe-flat-container {
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+}
+
 canvas {
     touch-action: pan-y;
 }
@@ -44,5 +60,15 @@ canvas {
 
 .webgl-iframe-mac {
     position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+/* mockup image */
+.mockup-image {
+    max-width: 95% !important;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }

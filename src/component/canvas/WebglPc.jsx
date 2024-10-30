@@ -18,7 +18,8 @@ function useOperatingSystem() {
 }
 
 const MacModel = ({ startAnimation }) => {
-    const scene = useGLTF("./pc.glb");
+    const scene  = useGLTF(process.env.PUBLIC_URL + '/pc.glb');
+
     const dirLightRef = useRef();
     const os = useOperatingSystem();
 

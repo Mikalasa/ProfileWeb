@@ -2,7 +2,7 @@
   "name": "profile-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://mikalasa.github.io/ProfileWeb",
   "dependencies": {
     "@react-spring/three": "^9.7.3",
     "@react-three/drei": "^9.96.5",

@@ -8,6 +8,7 @@ import MouseScrollicon from "./component/common/MouseScrollicon";
 import WebglPc from "./component/canvas/WebglPc";
 import { isMobile } from 'react-device-detect';
 import Iphone from "./component/canvas/Iphone";
+import Flat from "./component/canvas/Flat";
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
                 <StarsCanvas/>
             </div>
             <div ref={webglPcRef} className="about-container layout-container">
-                {!isMobile && loadWebglPc ? <WebglPc /> : loadWebglPc && <Iphone />}
+                {!isMobile && loadWebglPc ? <WebglPc /> : loadWebglPc && <Flat />}
             </div>
         </div>
     );

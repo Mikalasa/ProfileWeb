@@ -5,44 +5,8 @@ import CanvasLoader from "./CanvasLoader";
 import {isMobile} from "react-device-detect";
 
 
-// function useLongPress(onLongPress, ms = 300) {
-//     const [startLongPress, setStartLongPress] = useState(false);
-//
-//     useEffect(() => {
-//         let timerId;
-//         if (startLongPress) {
-//             timerId = setTimeout(onLongPress, ms);
-//         } else {
-//             clearTimeout(timerId);
-//         }
-//
-//         return () => {
-//             clearTimeout(timerId);
-//         };
-//     }, [onLongPress, ms, startLongPress]);
-//
-//     const start = (event) => {
-//         event.preventDefault();
-//         setStartLongPress(true);
-//     };
-//
-//     const stop = (event) => {
-//         event.preventDefault();
-//         setStartLongPress(false);
-//     };
-//
-//     return {
-//         onMouseDown: start,
-//         onMouseUp: stop,
-//         onMouseLeave: stop,
-//         onTouchStart: start,
-//         onTouchEnd: stop,
-//     };
-// }
-
-
 function Model({ setCanRotate }) {
-    const { scene } = useGLTF('./iphone.glb')
+    const scene  = useGLTF(process.env.PUBLIC_URL + '/iphone.glb')
     return (
         <>
             <ambientLight intensity={10} color={"#ffffff"}/>
@@ -77,7 +41,6 @@ function Iphone() {
     };
 
     // const longPressEvents = useLongPress(onLongPress, 500);
-
     return (
         <div className="mac-bg">
             <Canvas
