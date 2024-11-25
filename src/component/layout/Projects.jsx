@@ -1,19 +1,27 @@
-import Overview from "../content/Overview";
-import SkillCardList from "../content/SkillCardList";
-import ProjectCardList from "../content/ProjectCardList";
-import ProjectIntroduction from "../content/ProjectIntroduction";
-import About from "../content/About";
+import Overview from "../section/Overview";
+import SkillCardList from "../section/SkillCardList";
+import ProjectCardList from "../section/ProjectCardList";
+import ProjectIntroduction from "../section/ProjectIntroduction";
+import PageExtender from "../widgets/pageExtender";
 import {isMobile} from "react-device-detect";
+import StarsCanvas from "../canvas/StarsBG";
 
 function Projects() {
   return (
-    <div className="projects">
-        <Overview />
-        <SkillCardList />
-        <ProjectIntroduction />
-        <ProjectCardList />
-        {isMobile ? <></> : <About />}
-    </div>
+      <>
+          <div className="gradient-transition"></div>
+          <div className="projects-container layout-container">
+              <div className="projects">
+                  <Overview/>
+                  <SkillCardList/>
+                  <ProjectIntroduction/>
+                  <ProjectCardList/>
+                  {isMobile ? <></> : <PageExtender/>}
+              </div>
+              {isMobile ? <></> : <StarsCanvas/>}
+          </div>
+      </>
+
   );
 }
 

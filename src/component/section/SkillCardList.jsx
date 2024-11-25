@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { skillCardVariants } from '../../utility/custom-motion';
-import { skills } from '../../constants/custom-skill-config';
+import { skills } from '../../constants/config-skills';
 import { useInView } from 'react-intersection-observer';
 import { Tilt } from 'react-tilt';
 

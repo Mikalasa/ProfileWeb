@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { customTailwind } from "../../constants/custom-tailwind";
-import { navLinks } from "../../constants/custom-config";
-import { menu, close } from "../../constants/custom-config";
+import { navLinks } from "../../constants/config-web-paragraph";
+import { menu, close } from "../../constants/config-web-paragraph";
 
 const Navbar = () => {
     const [active, setActive] = useState("");

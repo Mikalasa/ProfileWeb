@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import {customTailwind} from "../../constants/custom-tailwind";
 import { fadeIn, textVariant } from "../../utility/custom-motion";
-import { projectOverView } from "../../constants/custom-config";
+import { projectOverView } from "../../constants/config-web-paragraph";
 import { useInView } from 'react-intersection-observer';
 
 function ProjectIntroduction() {

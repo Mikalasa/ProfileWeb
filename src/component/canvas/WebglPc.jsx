@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Html, Preload, PresentationControls, useGLTF } from '@react-three/drei';
-import CanvasLoader from "./CanvasLoader";
+import CanvasLoader from "../widgets/CanvasLoader";
 import { CanvasTexture, LinearFilter } from "three";
 import { useSpring, animated } from '@react-spring/three';
 

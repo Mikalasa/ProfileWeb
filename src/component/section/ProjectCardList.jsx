@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import {fadeIn} from '../../utility/custom-motion';
-import { projects } from '../../constants/custom-project-config';
+import { projects } from '../../constants/config-projectsText';
 import { useInView } from 'react-intersection-observer';
 import { Tilt } from 'react-tilt';
 import React from "react";

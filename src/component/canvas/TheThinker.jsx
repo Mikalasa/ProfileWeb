@@ -2,7 +2,7 @@ import React, {Suspense, useEffect, useMemo, useRef, useState} from "react";
 import {Canvas} from "@react-three/fiber";
 import {Float, OrbitControls, Preload, useGLTF} from "@react-three/drei";
 import {CanvasTexture, LinearFilter} from "three";
-import CanvasLoader from "./CanvasLoader";
+import CanvasLoader from "../widgets/CanvasLoader";
 import {isMobile} from "react-device-detect";
 
 const ThinkerModel = () => {

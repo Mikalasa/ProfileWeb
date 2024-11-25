@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { heroText} from "../../constants/custom-config";
+import { heroText} from "../../constants/config-web-paragraph";
 import {customTailwind} from "../../constants/custom-tailwind";
 import {isMobile} from "react-device-detect";
 

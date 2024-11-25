@@ -26,7 +26,22 @@ html {
     );
 }
 
-/* scroll bar */
+.custom-drop-down-menu {
+    background: -webkit-linear-gradient(to top, #050505, #000000);
+    background: linear-gradient(to top, #000000, #000000);
+}
+
+.custom-navbar-bg {
+    background: -webkit-linear-gradient(180deg, #050505, #000000);
+}
+
+
+
+
+
+/*
+*** scroll bar ***
+*/
 
 /* The whole scrollbar */
 ::-webkit-scrollbar {
