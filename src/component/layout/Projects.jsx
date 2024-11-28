@@ -18,7 +18,7 @@ function Projects() {
                   <ProjectCardList/>
                   {isMobile ? <></> : <PageExtender/>}
               </div>
-              {isMobile ? <></> : <StarsCanvas/>}
+              {/*{isMobile ? <></> : <StarsCanvas/>}*/}
           </div>
       </>
 
