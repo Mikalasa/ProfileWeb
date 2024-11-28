@@ -20,10 +20,7 @@ export const heroText = {
     title_f: "Hi, I'm ",
     title_l: "Xingyi",
     description: <>
-        {"I'm a front-end developer with a passion for creating beautiful web applications."}
-        <br/>
-        <br/>
-        {"I love coding and designing."}
+        {"A passion developer creating beautiful web applications."}
     </>
 }
 
