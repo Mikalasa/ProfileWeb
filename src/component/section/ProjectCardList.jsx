@@ -12,7 +12,7 @@ const ProjectCard = ({ project, custom }) => {
         triggerOnce: true,
         rootMargin: "-100px 0px",
     });
-    const cardContent = (
+    const card = (
         <motion.div
             ref={ref}
             className="project-card shadow-lg flex flex-col relative my-4 sm:my-8 cursor-pointer"
@@ -22,15 +22,12 @@ const ProjectCard = ({ project, custom }) => {
             custom={custom}
             onClick={() => window.open(project.url, "_blank")}
         >
-            <motion.div className="project-img-box"
-                        whileHover={{y: -30, scale: 1.05}}
-                        transition={{duration: 0.2}}
-            >
+            <motion.div className="project-img-box">
                 <motion.img
                     src={process.env.PUBLIC_URL + project.imageURL}
                     alt={`${project.title} image`}
                     className="project-cover"
-                    whileHover={{scale: 1.1}}
+                    whileHover={{scale: 1.3}}
                     transition={{duration: 0.3}}
                 />
             </motion.div>
@@ -71,17 +68,19 @@ const ProjectCard = ({ project, custom }) => {
             </div>
         </motion.div>
     )
+
     return (
         <motion.div>
             {isMobile ? (
-                cardContent
-            ) : (
+                card
+            ) :
+                (
                 <Tilt className="Tilt" options={{max: 30, perspective: 1000, easing: "cubic-bezier(.03,.98,.52,.99)", transition: true}}>
-                    {cardContent}
+                    {card}
                 </Tilt>
-            )}
+                )
+            }
         </motion.div>
-
     );
 };
 

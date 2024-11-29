@@ -1,6 +1,6 @@
 import {isMobile} from "react-device-detect";
-import WebglPc from "../canvas/WebglPc";
-import Flat from "../canvas/Flat";
+import WebglPc from "../canvas/WebglPc.jsx";
+import Flat from "../canvas/Flat.jsx";
 import {useEffect, useRef, useState} from "react";
 
 function About() {

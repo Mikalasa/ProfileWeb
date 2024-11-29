@@ -13,7 +13,7 @@ const SkillCard = ({ skill, custom }) => {
         <motion.div whileHover={{scale: 1.05}}>
             <motion.div
                 ref={ref}
-                className="skill-card bg-white shadow-lg overflow-hidden relative my-4 sm:my-6 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]"
+                className="bg-white shadow-lg overflow-hidden relative my-4 sm:my-6 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] rounded-full justify-center"
                 variants={skillCardVariants}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
@@ -21,7 +21,9 @@ const SkillCard = ({ skill, custom }) => {
             >
                 <motion.div/>
                 <img src={process.env.PUBLIC_URL + skill.logoURL} alt={`${skill.title} logo`}
-                     className="object-cover w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] absolute"/>
+                     className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] absolute top-1/2 left-1/2"
+                     style={{ transform: "translate(-50%, -50%)" }}
+                />
             </motion.div>
         </motion.div>
 

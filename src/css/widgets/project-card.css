@@ -1,33 +1,3 @@
-.skill-card {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-.object-cover {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    z-index: 3;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-@keyframes gradientFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 .project-card {
     width: 20rem;
     height: 30rem;
@@ -36,11 +6,8 @@
     opacity: 0.85;
     border-radius: 15px;
     padding: 10px;
-    box-shadow: 0 4px 6px rgb(243, 243, 243);
-    animation: gradientFlow 10s ease infinite;
-    /*background: linear-gradient(45deg, rgba(238, 119, 82, 0.7), rgba(231, 60, 126, 0.7), rgba(35, 166, 213, 0.7), rgba(35, 213, 171, 0.7));*/
-    background: linear-gradient(45deg, rgba(138, 43, 226, 0.5), rgba(74, 0, 224, 0.5), rgba(49, 220, 174, 0.5), rgba(74, 20, 140, 0.5));
-    background-size: 300% 300%;
+    background-color: rgba(126, 177, 140, 0.2);
+
 }
 
 .project-img-box {
@@ -49,28 +16,17 @@
     overflow: hidden;
     border-radius: 0.5rem;
     position: relative;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    transform: translateZ(20px);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 20px 30px rgb(0, 0, 0);
 }
 
 .project-text-box {
     padding: 0.5rem;
     height: 40%;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .project-cover {
-    width: calc(100% + 10px);
     height: auto;
-}
-
-.tech-stack-tag {
-    background-color: #FF7F50;
-    color: #fff;
-    border-radius: 0.5rem;
-    display: inline-block;
 }
 
 .github-icon {
