@@ -84,6 +84,8 @@ const MacModel = ({ startAnimation }) => {
                     <iframe
                         title={"iframe-pc"}
                         className={`webgl-iframe webgl-iframe-${os}`}
+                        sandbox="allow-scripts allow-same-origin"
+                        loading="lazy"
                         src="https://mikalasa.github.io/ProfileWeb-Iframe-About/"
                     />
                 </Html>

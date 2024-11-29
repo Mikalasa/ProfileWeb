@@ -5,6 +5,7 @@
     border: none;
     width: 1540px;
     height: 840px;
+    will-change: transform, opacity;
 }
 .webgl-iframe-iphone {
     width: 420px;
