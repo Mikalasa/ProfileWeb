@@ -1,8 +1,8 @@
 import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { Html, Preload, PresentationControls, useGLTF } from '@react-three/drei';
-import CanvasLoader from "../widgets/CanvasLoader";
-import { CanvasTexture, LinearFilter } from "three";
+import CanvasLoader from "../widgets/CanvasLoader.jsx";
+import { TextureLoader, Clock } from "three";
 import { useSpring, animated } from '@react-spring/three';
 
 function useOperatingSystem() {
@@ -18,19 +18,18 @@ function useOperatingSystem() {
 }
 
 const MacModel = ({ startAnimation }) => {
-    const scene  = useGLTF(process.env.PUBLIC_URL + '/pc.glb');
+    const scene = useGLTF(process.env.PUBLIC_URL + '/pc.glb', true, "draco");
 
     const dirLightRef = useRef();
     const os = useOperatingSystem();
 
     const { position: modelPosition, rotation: modelRotation } = useSpring({
         from: { position: [-10, -2.8, -15], rotation: [0, Math.PI / 2, 0] },
-        to: { position: [3, -2.8, 5.5], rotation: [0, - Math.PI / 2, 0] },
+        to: { position: [3, -2.8, 5.5], rotation: [0, -Math.PI / 2, 0] },
         config: { tension: 40, friction: 15 },
         reset: startAnimation,
     });
 
-    // compute relative position of iframe
     const { position: iframePosition } = useSpring({
         from: { position: [-10 - 3, -2.8 + 3, -15 - 1.2] },
         to: { position: [3 - 3, -2.8 + 3, 5.5 - 1.2] },
@@ -57,16 +56,16 @@ const MacModel = ({ startAnimation }) => {
                 intensity={0.3}
                 position={[4, -1, 10]}
                 castShadow
-                shadow-mapSize-width={512}
-                shadow-mapSize-height={512}
+                shadow-mapSize-width={256}
+                shadow-mapSize-height={256}
                 shadow-radius={10}
             />
-            <pointLight position={[4, 0, 8]} intensity={50} color={"#7cb3c4"} castShadow shadow-mapSize-width={512}
-                shadow-mapSize-height={512} shadow-radius={10} />
-            <pointLight position={[-7, 1, 8]} intensity={100} color={"#d24e4e"} castShadow shadow-mapSize-width={512}
-                shadow-mapSize-height={512} shadow-radius={10} />
-            <pointLight position={[2, 1, -8]} intensity={50} color={"#a308ef"} castShadow shadow-mapSize-width={512}
-                shadow-mapSize-height={512} shadow-radius={10} />
+            <pointLight position={[4, 0, 8]} intensity={50} color={"#7cb3c4"} castShadow shadow-mapSize-width={256}
+                        shadow-mapSize-height={256} shadow-radius={10} />
+            <pointLight position={[-7, 1, 8]} intensity={100} color={"#d24e4e"} castShadow shadow-mapSize-width={256}
+                        shadow-mapSize-height={256} shadow-radius={10} />
+            <pointLight position={[2, 1, -8]} intensity={50} color={"#a308ef"} castShadow shadow-mapSize-width={256}
+                        shadow-mapSize-height={256} shadow-radius={10} />
 
             <animated.group position={modelPosition} rotation={modelRotation}>
                 <primitive
@@ -95,20 +94,7 @@ const MacModel = ({ startAnimation }) => {
 
 
 const Wall = () => {
-    const gradientTexture = useMemo(() => {
-        const size = 100;
-        const canvas = document.createElement('canvas');
-        canvas.width = canvas.height = size;
-        const context = canvas.getContext('2d');
-        const gradient = context.createLinearGradient(0, 0, size, size);
-        gradient.addColorStop(0, '#1e1e1e'); // start color
-        gradient.addColorStop(1, '#212121'); // end color
-        context.fillStyle = gradient;
-        context.fillRect(0, 0, size, size);
-        const texture = new CanvasTexture(canvas);
-        texture.minFilter = LinearFilter;
-        return texture;
-    }, []);
+    const texture = useMemo(() => new TextureLoader().load(process.env.PUBLIC_URL + "/pc-ground.webp"), []);
 
     return (
         <mesh
@@ -119,7 +105,7 @@ const Wall = () => {
         >
             <planeGeometry args={[200, 200]} />
             <meshPhysicalMaterial
-                map={gradientTexture}
+                map={texture}
                 metalness={0.5}
                 roughness={0.4}
             />
@@ -127,24 +113,20 @@ const Wall = () => {
     );
 };
 
-function WebglPc() {
+const WebglPc = () => {
     const [startAnimation, setStartAnimation] = useState(false);
     const sectionRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
+                let timer = null;
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setStartAnimation(true);
-
-                        const currentScrollY = window.scrollY;  // current scroll position
-                        const sectionTop = sectionRef.current.getBoundingClientRect().top + currentScrollY;  // active section top
-
-                        window.scrollTo({
-                            top: sectionTop,
-                            behavior: 'smooth',
-                        });
+                        clearTimeout(timer);
+                        timer = setTimeout(() => {
+                            setStartAnimation(true);
+                        }, 500);
                     }
                 });
             },
@@ -156,23 +138,39 @@ function WebglPc() {
         }
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
-            }
+            if (sectionRef.current) observer.unobserve(sectionRef.current);
         };
     }, []);
+
+    const FrameLimiter = ({ fps }) => {
+        const clock = useRef(new Clock());
+        const frameInterval = 1 / fps;
+        const lastFrameTime = useRef(0);
+
+        useFrame((state) => {
+            const elapsedTime = clock.current.getElapsedTime();
+            if (elapsedTime - lastFrameTime.current >= frameInterval) {
+                lastFrameTime.current = elapsedTime;
+                state.gl.render(state.scene, state.camera);
+            }
+        });
+
+        return null;
+    };
 
     return (
         <div className="mac-bg" ref={sectionRef}>
             <Canvas
                 shadows
                 dpr={[1, 2]}
-                camera={{ position: [0, 0, 15], fov: 25, near: 0.1, far: 200 }}
-                gl={{ antialias: true, alpha: false, preserveDrawingBuffer: true }}
+                camera={{ position: [0, 0, 15], fov: 25 }}
+                gl={{ antialias: true, alpha: false }}
             >
+                <FrameLimiter fps={30} />
+
                 <Suspense fallback={<CanvasLoader />}>
                     <PresentationControls
-                        snap={true}
+                        snap
                         config={{ tension: 120, friction: 20 }}
                         azimuth={[(-20 * Math.PI) / 180, (20 * Math.PI) / 180]}
                         polar={[(-5 * Math.PI) / 180, (15 * Math.PI) / 180]}
@@ -185,6 +183,6 @@ function WebglPc() {
             </Canvas>
         </div>
     );
-}
+};
 
 export default WebglPc;
