@@ -36,7 +36,8 @@
     z-index: 5;
 }
 .mac-bg {
-    height: 1000px;
+    height: 100vh;
+    min-height: 1000px;
 }
 .flat-bg {
     height: 800px;

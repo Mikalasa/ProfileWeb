@@ -4,7 +4,7 @@ import { fadeIn, textVariant } from "../../utility/custom-motion";
 import {IntroductionOverView} from "../../constants/config-web-paragraph";
 import { useInView } from 'react-intersection-observer';
 
-function Overview() {
+function OverviewInfo() {
     const [ref, inView] = useInView({
         triggerOnce: true,
         rootMargin: "-100px 0px",
@@ -13,8 +13,7 @@ function Overview() {
         <>
             <motion.div
                 ref={ref}
-                id="overview"
-                className={`mt-14`} variants={textVariant(0)}
+                className={`pt-10 mt-14`} variants={textVariant(0)}
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}>
                 <h2 className={customTailwind.sectionHeadText + " mt-10 sm:mt-5"}>Overview.</h2>
@@ -33,4 +32,4 @@ function Overview() {
     );
 }
 
-export default Overview;
+export default OverviewInfo;

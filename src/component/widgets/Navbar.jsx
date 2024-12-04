@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { customTailwind } from "../../constants/custom-tailwind";
 import { navLinks } from "../../constants/config-web-paragraph";
 import { menu, close } from "../../constants/config-web-paragraph";
+import { AutoScrollContext } from '../../utility/AutoScrollContext';
 
 const Navbar = () => {
     const [active, setActive] = useState("");
     const [toggle, setToggle] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const { setIsNavClick } = useContext(AutoScrollContext);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,23 +25,44 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleNavClick = (e, navId, navTitle) => {
+        e.preventDefault();
+        setIsNavClick(true);
+        setActive(navTitle);
+
+        const element = document.getElementById(navId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        setTimeout(() => {
+            setIsNavClick(false);
+        }, 2000); // 根据滚动时间调整
+
+        if (toggle) setToggle(false); // 关闭移动端菜单
+    };
+
     return (
         <nav
-            className={`${
-                customTailwind.paddingX
-            } w-full flex items-center py-4 fixed top-0 z-20 custom-navbar ${
+            id="navbar"
+            className={`${customTailwind.paddingX} w-full flex items-center py-4 fixed top-0 z-20 custom-navbar ${
                 scrolled ? "custom-navbar-bg" : "bg-transparent"
             }`}
         >
             <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
                 <div className="flex gap-4">
-                    <img src={process.env.PUBLIC_URL + "/prod-favicon.png"} className="h-[32px] w-[32px]" />
+                    <img src={process.env.PUBLIC_URL + "/prod-favicon.png"} className="h-[32px] w-[32px]" alt="Logo" />
                     <a
-                        href="#"
+                        href="/"
                         className='flex items-center gap-2'
-                        onClick={() => {
+                        onClick={(e) => {
+                            e.preventDefault();
                             setActive("");
-                            window.scrollTo(0, 0);
+                            setIsNavClick(true);
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            setTimeout(() => {
+                                setIsNavClick(false);
+                            }, 500);
                         }}
                     >
                         <p className='text-white text-[18px] font-bold cursor-pointer flex '>
@@ -49,19 +72,24 @@ const Navbar = () => {
                     </a>
                 </div>
 
+                {/* 桌面导航菜单 */}
                 <ul className='list-none hidden sm:flex flex-row gap-10'>
                     {navLinks.map((nav) => (
                         <li
                             key={nav.id}
                             className={`hover:text-gray-300 text-white text-[18px] font-medium cursor-pointer`}
-                            onClick={() => setActive(nav.title)}
                         >
-                            <a href={`#${nav.id}`}>{nav.title}</a>
+                            <a
+                                href={`#${nav.id}`}
+                                onClick={(e) => handleNavClick(e, nav.id, nav.title)}
+                            >
+                                {nav.title}
+                            </a>
                         </li>
-
                     ))}
                 </ul>
 
+                {/* 移动端导航菜单 */}
                 <div className='sm:hidden flex flex-1 justify-end items-center'>
                     <img
                         src={toggle ? close : menu}
@@ -82,12 +110,13 @@ const Navbar = () => {
                                     className={`font-poppins font-medium cursor-pointer text-[16px] ${
                                         active === nav.title ? "text-gray-300" : "text-white"
                                     }`}
-                                    onClick={() => {
-                                        setToggle(!toggle);
-                                        setActive(nav.title);
-                                    }}
                                 >
-                                    <a href={`#${nav.id}`}>{nav.title}</a>
+                                    <a
+                                        href={`#${nav.id}`}
+                                        onClick={(e) => handleNavClick(e, nav.id, nav.title)}
+                                    >
+                                        {nav.title}
+                                    </a>
                                 </li>
                             ))}
                         </ul>

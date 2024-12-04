@@ -7,12 +7,12 @@ import { isMobile } from "react-device-detect";
 
 function Hero() {
     return (
-        <div className="hero-container h-screen layout-container">
+        <section id='hero' className="hero-container h-screen layout-container">
             {/* eslint-disable-next-line react/jsx-pascal-case */}
             {isMobile ? <HeroCard_Mobile/> : <HeroCard/>}
             <TheThinkerCanvas/>
             <MouseScrollicon/>
-        </div>
+        </section>
     );
 }
 

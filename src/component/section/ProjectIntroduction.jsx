@@ -10,7 +10,7 @@ function ProjectIntroduction() {
         rootMargin: "-100px 0px",
     });
     return (
-        <div id="projects" className="projects-introduction flex flex-col items-center justify-center">
+        <div className="projects-introduction flex flex-col items-center justify-center">
             <motion.div
                 ref={ref}
                 className={`mt-14`} variants={textVariant(0)}
