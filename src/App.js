@@ -31,7 +31,7 @@ function App() {
                 <Navbar />
                 <Suspense fallback={<div>Loading...</div>}>
                     <AutoScrollHero />
-                    <AutoScrollParticleText text="Welcome to my profile website！" />
+                    <AutoScrollParticleText text="Welcome to my profile website！🚀" />
                     <AutoScrollOverview />
                     <AutoScrollProjects />
                     <AutoScrollAbout />
