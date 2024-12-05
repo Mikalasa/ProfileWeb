@@ -18,7 +18,7 @@ const useOperatingSystem = () => {
 
 // Memoized MacModel component
 const MacModel = React.memo(() => {
-    const { scene } = useGLTF(`${process.env.PUBLIC_URL}/pc.glb`);
+    const { scene } = useGLTF(`${process.env.PUBLIC_URL}/pc-bake.glb`);
 
     // Memoized positions and rotations
     const modelPosition = useMemo(() => [3, -2.8, 5.5], []);
