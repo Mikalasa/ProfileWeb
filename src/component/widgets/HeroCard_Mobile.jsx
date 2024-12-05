@@ -14,12 +14,13 @@ function HeroCardMobile() {
 
     return (
         <motion.div
+            id="hero-card-bg"
             className={` ${customTailwind.paddingX} flex flex-row items-start gap-5`}
             initial={{opacity: 0, scale: 0.5}}
             animate={{opacity: 1, scale: 1}}
             transition={{duration: 5, type: 'spring', damping: 10, stiffness: 100}}
         >
-            <div id="hero-card-bg">
+            <div>
                 <div id="hero-card-top">
                     <div
                         className="hero-card"

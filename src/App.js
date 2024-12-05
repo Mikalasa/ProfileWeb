@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import Navbar from "./component/widgets/Navbar.jsx";
 import { AutoScrollContext } from './utility/AutoScrollContext';
 import withAutoScroll from "./customHooks/withAutoScroll.jsx";
+import HeroCard from "./component/widgets/HeroCard";
 
 const Hero = lazy(() => import("./component/layout/Hero.jsx"));
 const ParticleTextWrapper = lazy(() => import("./component/layout/ParticleTextWrapper.jsx"));

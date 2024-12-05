@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import ParticleText from "../canvas/ParticleText";
+import { isMobile } from "react-device-detect";
 
 const LazyParticleText = React.lazy(() => import("../canvas/ParticleText.jsx"));
 
 const ParticleTextWrapper = ({ text }) => {
     const [isVisible, setIsVisible] = useState(false);
     const containerRef = useRef(null);
+    const fontSize = isMobile ? 60 : 160;
+    const pixGap = isMobile ? 5 : 7;
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -36,7 +39,7 @@ const ParticleTextWrapper = ({ text }) => {
         <div id="ParticleText-Warpper" ref={containerRef} style={{ minHeight: "100vh" }}>
             {isVisible && (
                 <React.Suspense fallback={<div>Loading...</div>}>
-                    <LazyParticleText text={text} />
+                    <LazyParticleText text={text} fontSize={fontSize} pixGap={pixGap}/>
                 </React.Suspense>
             )}
         </div>

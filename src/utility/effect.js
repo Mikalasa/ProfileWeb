@@ -1,19 +1,19 @@
 import Particle from './particle';
 
 class Effect {
-    constructor(context, canvasWidth, canvasHeight) {
+    constructor(context, canvasWidth, canvasHeight, fontSize, pixGap) {
         this.context = context;
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
         this.textX = this.canvasWidth / 2;
         this.textY = this.canvasHeight / 2;
-        this.fontSize = 160;
+        this.fontSize = fontSize;
         this.lineHeight = this.fontSize * 1.1;
         this.maxTextWidth = this.canvasWidth * 0.8;
         this.verticalOffset = 0;
 
         this.particles = [];
-        this.gap = 6;
+        this.gap = pixGap;
         this.mouse = {
             radius: 20000,
             x: null,

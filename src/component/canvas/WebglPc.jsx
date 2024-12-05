@@ -1,11 +1,7 @@
-// WebglPc.jsx
-
 import React, { Suspense, useMemo, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Html, Preload, PresentationControls, useGLTF, PerformanceMonitor } from '@react-three/drei';
 import CanvasLoader from "../widgets/CanvasLoader.jsx";
-import { TextureLoader } from 'three';
-import { useLoader } from '@react-three/fiber';
 
 // Custom hook to detect the user's operating system
 const useOperatingSystem = () => {
@@ -31,12 +27,11 @@ const MacModel = React.memo(() => {
 
     const os = useOperatingSystem();
 
-    // Enable shadows on meshes
     useEffect(() => {
         scene.traverse((child) => {
             if (child.isMesh) {
-                child.castShadow = true;
-                child.receiveShadow = true;
+                child.castShadow = false;
+                child.receiveShadow = false;
             }
         });
     }, [scene]);
@@ -45,36 +40,7 @@ const MacModel = React.memo(() => {
     return (
         <>
             {/* Original ambient light */}
-            <ambientLight intensity={2} color={"#ffffff"} />
-
-            {/* Original point lights */}
-            <pointLight
-                position={[4, 0, 8]}
-                intensity={50}
-                color={"#7cb3c4"}
-                castShadow
-                shadow-mapSize-width={128}
-                shadow-mapSize-height={128}
-                shadow-radius={10}
-            />
-            <pointLight
-                position={[-7, 1, 8]}
-                intensity={100}
-                color={"#d24e4e"}
-                castShadow
-                shadow-mapSize-width={128}
-                shadow-mapSize-height={128}
-                shadow-radius={10}
-            />
-            <pointLight
-                position={[2, 1, -8]}
-                intensity={50}
-                color={"#a308ef"}
-                castShadow
-                shadow-mapSize-width={128}
-                shadow-mapSize-height={128}
-                shadow-radius={10}
-            />
+            <ambientLight intensity={10} color={"#ffffff"} />
 
             {/* Mac model */}
             <group position={modelPosition} rotation={modelRotation}>
@@ -105,28 +71,12 @@ const MacModel = React.memo(() => {
 // Preload the GLTF model to improve loading times
 useGLTF.preload(`${process.env.PUBLIC_URL}/pc.glb`);
 
-// Memoized Wall component
-const Wall = React.memo(() => {
-    const texture = useLoader(TextureLoader, `${process.env.PUBLIC_URL}/pc-ground.webp`);
-
-    return (
-        <mesh
-            position={[0, 0, -12]}
-            rotation={[0, 0, Math.PI / 2]}
-            receiveShadow
-        >
-            <planeGeometry args={[50, 50]} />
-            <meshStandardMaterial map={texture} />
-        </mesh>
-    );
-});
-
 // Main WebglPc component
 const WebglPc = () => {
     return (
         <div className="mac-bg">
             <Canvas
-                shadows
+                shadows={false}
                 dpr={[1, 1.5]}
                 camera={{ position: [0, 0, 15], fov: 25 }}
                 gl={{ antialias: true }}
@@ -144,7 +94,6 @@ const WebglPc = () => {
                         polar={[(-5 * Math.PI) / 180, (15 * Math.PI) / 180]}
                     >
                         <MacModel />
-                        <Wall />
                     </PresentationControls>
                 </Suspense>
 

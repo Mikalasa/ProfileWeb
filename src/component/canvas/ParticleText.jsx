@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Effect from '../../utility/effect';
 
-const ParticleText = ({ text }) => {
+const ParticleText = ({ text, fontSize, pixGap}) => {
     const canvasRef = useRef(null);
     const effectRef = useRef(null);
     const animationFrameId = useRef(null);
@@ -13,7 +13,7 @@ const ParticleText = ({ text }) => {
         canvas.height = window.innerHeight;
 
         // 初始化效果
-        effectRef.current = new Effect(ctx, canvas.width, canvas.height);
+        effectRef.current = new Effect(ctx, canvas.width, canvas.height, fontSize, pixGap);
         effectRef.current.wrapText(text);
 
         const handleMouseMove = (e) => {
