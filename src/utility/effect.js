@@ -13,7 +13,7 @@ class Effect {
         this.verticalOffset = 0;
 
         this.particles = [];
-        this.gap = 4;
+        this.gap = 6;
         this.mouse = {
             radius: 20000,
             x: null,
