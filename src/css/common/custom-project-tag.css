@@ -1,7 +1,11 @@
 .tech-stack-tag {
-    color: #fff;
+    color: #fafafa;
     border-radius: 0.5rem;
     display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
 }
 .JavaScript-tag {
     background-color: rgba(247, 223, 30, 0.6); /* #f7df1e with 60% opacity */

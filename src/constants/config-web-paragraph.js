@@ -20,33 +20,35 @@ export const heroText = {
     title_f: "Hi, I'm ",
     title_l: "Xingyi",
     description: <>
-        {"A passion developer creating beautiful web applications."}
+        {"A passionate and creative developer."}
     </>
 }
 
 export const IntroductionOverView = {
-    paragraph: `I’m passionate about front-end development because it provides real-time results.
-    I’ve also developed solid knowledge of back-end technologies.
-    Both are essential for building complete applications, and becoming a full-stack developer is one of my goals.
-    Below are the main languages and tech stacks I’ve mastered.`
+    paragraph:
+        <>
+            I am deeply passionate about <span
+            className="text-[20px] the-highLight-words-1">front-end development</span> and <span
+            className="text-[20px] the-highLight-words-1">full-stack  development.</span>
+            <br/>
+            My background in design education has cultivated a strong interest in visually driven effect development. In my
+            free time, I enjoy working on fun side projects and attending various meetups. Occasionally, I also write
+            technical articles. Feel free to follow my channels to share and connect. Thank you!
+            <br/>
+            <br/>
+            Below is a list of my <span className="text-[20px] the-highLight-words-1">core skills.</span>
+        </>
 }
 export const projectOverView = {
     paragraph:
         <>
-            {
-                `This portfolio showcases my diverse projects from the past two years,
-                ranging from games to fully integrated web applications with robust front-end and back-end systems.
-                It highlights my versatility in programming.`
-            }
+            These are some personal projects I have completed in the past, primarily consisting of <span
+            className="text-[20px] the-highLight-words-2">full-stack web applications</span> and <span
+            className="text-[20px] the-highLight-words-2">games</span> based on frontend
+            technologies.
             <br/>
             <br/>
-            <b>
-                {"* Click on the cards to experience the live demo."}
-            </b>
-            <br/>
-            <b>
-                {"* Click on the GitHub icon to view the source code."}
-            </b>
+            <span className="the-highlight-text-box">Exploring advanced technologies and aiming for more innovative creations.</span>
         </>
 }
 

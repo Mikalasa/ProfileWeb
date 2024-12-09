@@ -22,29 +22,27 @@ const ProjectCard = ({ project, custom }) => {
             custom={custom}
             onClick={() => window.open(project.url, "_blank")}
         >
-            <motion.div className="project-img-box">
+            <div className='project-card-title-box flex justify-between items-center'>
+                <h3 className='text-white font-bold text-[24px]'>{project.title}</h3>
                 <motion.img
+                    src={process.env.PUBLIC_URL + '/github-mark.png'}
+                    className="github-icon z-10"
+                    whileHover={{scale: 1.3}}
+                    transition={{duration: 0.3}}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(project.repo, "_blank");
+                    }}
+                />
+            </div>
+            <div className="project-img-box mt-3 z-10">
+                <img
                     src={process.env.PUBLIC_URL + project.imageURL}
                     alt={`${project.title} image`}
                     className="project-cover"
-                    whileHover={{scale: 1.3}}
-                    transition={{duration: 0.3}}
                 />
-            </motion.div>
-            <div className='mt-4 project-text-box'>
-                <div className='flex justify-between'>
-                    <h3 className='text-white font-bold text-[24px]'>{project.title}</h3>
-                    <motion.img
-                        src={process.env.PUBLIC_URL + '/github-mark.png'}
-                        className="github-icon"
-                        whileHover={{scale: 1.3}}
-                        transition={{duration: 0.3}}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            window.open(project.repo, "_blank");
-                        }}
-                    />
-                </div>
+            </div>
+            <div className='mt-2 project-text-box'>
                 <ul className='list-disc pl-5 mt-2 text-gray-100 text-[12px]'>
                     {project.point && project.point.map((item, index) => (
                         <li key={index}>{item}</li>
@@ -56,7 +54,7 @@ const ProjectCard = ({ project, custom }) => {
                 </p>
             </div>
 
-            <div className='mt-4 flex flex-wrap gap-2 project-tag-box'>
+            <div className='flex flex-wrap gap-2 project-tag-box'>
                 {project.techStack.map((tag, index) => (
                     <p
                         key={index}
@@ -72,12 +70,17 @@ const ProjectCard = ({ project, custom }) => {
     return (
         <motion.div>
             {isMobile ? (
-                card
-            ) :
+                    card
+                ) :
                 (
-                <Tilt className="Tilt" options={{max: 30, perspective: 1000, easing: "cubic-bezier(.03,.98,.52,.99)", transition: true}}>
-                    {card}
-                </Tilt>
+                    <Tilt className="Tilt" options={{
+                        max: 20,
+                        perspective: 1000,
+                        easing: "cubic-bezier(.03,.98,.52,.99)",
+                        transition: true
+                    }}>
+                        {card}
+                    </Tilt>
                 )
             }
         </motion.div>
@@ -86,7 +89,7 @@ const ProjectCard = ({ project, custom }) => {
 
 function ProjectCardList() {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-0 sm:gap-4 p-4 mt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-0 sm:gap-4 p-4 mt-10">
             {projects.map((project, index) => (
                 <div key={index} className="flex items-center justify-center">
                     <ProjectCard project={project} custom={index}/>

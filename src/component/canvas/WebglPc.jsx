@@ -40,7 +40,7 @@ const MacModel = React.memo(() => {
     return (
         <>
             {/* Original ambient light */}
-            <ambientLight intensity={10} color={"#ffffff"} />
+            <ambientLight intensity={4} color={"#ffffff"} />
 
             {/* Mac model */}
             <group position={modelPosition} rotation={modelRotation}>
@@ -74,7 +74,7 @@ useGLTF.preload(`${process.env.PUBLIC_URL}/pc.glb`);
 // Main WebglPc component
 const WebglPc = () => {
     return (
-        <div className="mac-bg">
+        <div className="pc-bg">
             <Canvas
                 shadows={false}
                 dpr={[1, 1.5]}

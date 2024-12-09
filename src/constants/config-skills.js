@@ -51,4 +51,28 @@ export const skills = [
         title: "Content Creator",
         logoURL: "/techIcon/mysql.png",
     },
+    {
+        title: "Content Creator",
+        logoURL: "/techIcon/aspcore.png",
+    },
+    {
+        title: "Content Creator",
+        logoURL: "/techIcon/csharp.svg",
+    },
+    {
+        title: "Content Creator",
+        logoURL: "/techIcon/docker.svg",
+    },
+    {
+        title: "Content Creator",
+        logoURL: "/techIcon/expressjs.svg",
+    },
+    {
+        title: "Content Creator",
+        logoURL: "/techIcon/jest.svg",
+    },
+    {
+        title: "Content Creator",
+        logoURL: "/techIcon/redux.png",
+    },
 ]

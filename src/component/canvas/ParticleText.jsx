@@ -40,6 +40,7 @@ const ParticleText = ({ text, fontSize, pixGap}) => {
 
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+
             effectRef.current.render();
             animationFrameId.current = requestAnimationFrame(animate);
         };
