@@ -22,8 +22,8 @@ const MacModel = React.memo(() => {
 
     // Memoized positions and rotations
     const modelPosition = useMemo(() => [3, -2.8, 5.5], []);
-    const modelRotation = useMemo(() => [0, -Math.PI / 2, 0], []);
-    const iframePosition = useMemo(() => [0, 0.2, 4.3], []);
+    const modelRotation = useMemo(() => [0, -Math.PI / 2, -3.8 * (Math.PI / 180)], []);
+    const iframePosition = useMemo(() => [0, 0.25, 4.4], []);
 
     const os = useOperatingSystem();
 
@@ -52,7 +52,7 @@ const MacModel = React.memo(() => {
                 <Html
                     transform
                     wrapperClass="webgl-iframe-wrapper"
-                    distanceFactor={1.65}
+                    distanceFactor={1.64}
                     occlude
                 >
                     <iframe
