@@ -80,7 +80,7 @@
 .the-highlight-text-box::after {
     content: '';
     display: block;
-    width: 120px;
+    width: 200px;
     height: 2px;
     background-color: #ffffff;
     margin: 0.5rem auto 0;

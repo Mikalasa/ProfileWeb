@@ -48,7 +48,7 @@ export const projectOverView = {
             technologies.
             <br/>
             <br/>
-            <span className="the-highlight-text-box">Exploring advanced technologies and aiming for more innovative creations.</span>
+            <span className="the-highlight-text-box">Click a card to view the live demo page for each project.</span>
         </>
 }
 

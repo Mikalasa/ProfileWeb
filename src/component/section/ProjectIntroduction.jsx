@@ -24,7 +24,7 @@ function ProjectIntroduction() {
                 variants={fadeIn("", "", 0.3, 4)}
                 initial="hidden"
                 animate={inView ? "show" : "hidden"}
-                className='the-paragraph mt-4 text-[#C0C0C0] text-[17px] max-w-3xl leading-[30px]'
+                className='the-paragraph the-paragraph-center mt-4 text-[#C0C0C0] text-[17px] max-w-3xl leading-[30px]'
             >
                 {projectOverView.paragraph}
             </motion.p>
