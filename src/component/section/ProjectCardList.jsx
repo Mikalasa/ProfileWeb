@@ -23,7 +23,7 @@ const ProjectCard = ({ project, custom }) => {
             onClick={() => window.open(project.url, "_blank")}
         >
             <div className='project-card-title-box flex justify-between items-center'>
-                <h3 className='text-white font-bold text-[24px]'>{project.title}</h3>
+                <h3 className='text-white font-bold text-[20px]'>{project.title}</h3>
                 <motion.img
                     src={process.env.PUBLIC_URL + '/github-mark.png'}
                     className="github-icon z-10"
@@ -35,12 +35,22 @@ const ProjectCard = ({ project, custom }) => {
                     }}
                 />
             </div>
-            <div className="project-img-box mt-3 z-10">
+            <div className="project-img-box mt-3 z-10 relative">
                 <img
                     src={process.env.PUBLIC_URL + project.imageURL}
                     alt={`${project.title} image`}
                     className="project-cover"
                 />
+                <div className="absolute bottom-2 right-2 flex flex-wrap gap-1">
+                    {project.type.map((tag, index) => (
+                        <div
+                            key={index}
+                            className="bg-black bg-opacity-40 text-white text-[11px] px-2 py-1 rounded"
+                        >
+                            {tag}
+                        </div>
+                    ))}
+                </div>
             </div>
             <div className='mt-2 project-text-box'>
                 <ul className='list-disc pl-5 mt-2 text-gray-100 text-[12px]'>

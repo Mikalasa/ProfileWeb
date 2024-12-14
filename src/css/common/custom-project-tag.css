@@ -77,3 +77,6 @@
 .Sass-tag {
     background-color: rgba(255, 127, 80, 0.6); /* #FF7F50 with 60% opacity */
 }
+.Vercel-tag {
+    background-color: rgba(62, 62, 62, 0.6); /* Vercel's black color with 60% opacity */
+}

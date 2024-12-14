@@ -4,13 +4,14 @@ export const projects = [
         imageURL: "/projectImage/todolist.png",
         url: 'http://www.to-do-list.wuaze.com/',
         repo: 'https://github.com/Mikalasa/todo-list',
+        type: ["Full-Stack", "Web App"],
         point: [
             "Login and registration system.",
             "CRUD functionality.",
             "Circular statistical display and UI animations.",
             "Responsive UI for optimal all devices.",
         ],
-        description: `Developed using pure JavaScript, HTML, CSS. Used PHP as the backend language.`,
+        description: `Developed using pure JavaScript, HTML, CSS, and PHP, and deployed on the cloud.`,
         techStack: ["JavaScript", "HTML", "CSS", "PHP", "MySQL"],
     },
     {
@@ -18,20 +19,22 @@ export const projects = [
         imageURL: "/projectImage/encrypt.png",
         url: 'https://mikalasa.github.io/cryption-app/CaesarCipher/Encryption',
         repo: 'https://github.com/Mikalasa/enctryption-and-decryption-webapp',
+        type: ["Full-Stack", "Web App"],
         point: [
             "Login and registration system.",
             "Encrypt user passwords with salt.",
             "Caesar cipher, DES, AES encryption and decryption.",
             "Responsive UI for optimal all devices.",
         ],
-        description: `Deployed respectively on GitHub Pages and AWS.`,
-        techStack: ["React", "Sass", "TailwindCSS", "NodeJS", "ExpressJS", "RESTAPI", "MySQL", "AWS"],
+        description: `Deployed respectively on GitHub Pages and Vercel.`,
+        techStack: ["React", "Sass", "TailwindCSS", "NodeJS", "ExpressJS", "RESTAPI", "MySQL", "Vercel"],
     },
     {
         title: "MineSweeper",
         imageURL: "/projectImage/mines.png",
         url: 'https://mikalasa.github.io/minesweeper/',
         repo: 'https://github.com/Mikalasa/minesweeper',
+        type: ["Web Game"],
         point: [
             "Level, Timer and Flag insertion features.",
             "Shuffle algorithm ensures a uniform distribution probability of mines.",
@@ -46,6 +49,7 @@ export const projects = [
         imageURL: "/projectImage/bird.png",
         url: 'https://mikalasa.github.io/Flippy-biard/',
         repo: 'https://github.com/Mikalasa/Flippy-biard',
+        type: ["Web Game"],
         point: [
             "Background looping animation.",
             "Gravity simulation, collision detection.",
@@ -60,6 +64,7 @@ export const projects = [
         imageURL: "/projectImage/travelWeb.png",
         url: 'https://mikalasa.github.io/nz-travel-web/?#',
         repo: 'https://github.com/Mikalasa/nz-travel-web',
+        type: ["Web Page"],
         point: [
             "React-router for navigation.",
             "Login popup windows.",
