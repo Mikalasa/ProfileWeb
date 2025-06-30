@@ -22,9 +22,9 @@
     margin-top: 3rem;
     width: 100%;
     height: 100%;
-    min-height: 400px;
+    min-height: 300px;
     max-height: 600px;
-    min-width: 400px;
+    min-width: 300px;
     max-width: 450px;
     padding: 1rem;
     display: flex;
@@ -76,13 +76,13 @@
 }
 
 .orbit-system-box:hover {
-    transform: scale(1.05);
+    /*transform: scale(1.05);*/
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 6px 10px rgba(255, 255, 255, 0.15);
 }
 
 .orbit-system-box:hover::after {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1.05);
+    /*transform: translate(-50%, -50%) scale(1.05);*/
 }
 
 .orbit-system-box:hover::after {
@@ -140,6 +140,12 @@
 .planet:hover {
     transform: scale(1.2);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+.orbit-1, .orbit-2 {
+    will-change: transform;
+}
+.orbit-1.paused {
+    animation-play-state: paused;
 }
 
 .orbit-1 {

@@ -2,8 +2,8 @@ import React from "react";
 import { motion, useInView } from 'framer-motion';
 
 function MySocial({handle808Page}) {
-    const [isOrbit1Paused, setIsOrbit1Paused] = React.useState(false);
-    const [isOrbit2Paused, setIsOrbit2Paused] = React.useState(false);
+    // const [isOrbit1Paused, setIsOrbit1Paused] = React.useState(false);
+    // const [isOrbit2Paused, setIsOrbit2Paused] = React.useState(false);
     const ref = React.useRef(null);
     const isInView = useInView(ref, { once: true });
     const fadeInVariants = {
@@ -15,39 +15,30 @@ function MySocial({handle808Page}) {
         },
     };
 
+    const orbit1Ref = React.useRef(null);
+
     const handleHover = (e) => {
-        // console.log(e.target);
-        let theTarget = e.target.firstChild
-        // console.log(theTarget);
-        if (theTarget.alt.includes('orbit1')) {
-            setIsOrbit1Paused(true);
+        const orbit = e.target.dataset.orbit;
+        if (orbit === 'orbit1') {
+            orbit1Ref.current?.classList.add('paused');
         }
-        if (theTarget.alt.includes('orbit2')) {
-            setIsOrbit2Paused(true);
-        }
-    }
+
+    };
 
     const handleHoverLeave = (e) => {
-        let theTarget = e.target.firstChild
-        if (theTarget.alt.includes('orbit1')) {
-            setIsOrbit1Paused(false);
+        const orbit = e.target.dataset.orbit;
+        if (orbit === 'orbit1') {
+            orbit1Ref.current?.classList.add('paused');
         }
-        if (theTarget.alt.includes('orbit2')) {
-            setIsOrbit2Paused(false);
-        }
-    }
+
+    };
+
 
     const handleIconClick = (url, orbit, socialStatus, name) => {
         if (socialStatus === 'done') {
             window.open(url, '_blank');
         } else if (socialStatus === 'undone') {
             handle808Page(name);
-        }
-        if (orbit === 'orbit1') {
-            setIsOrbit1Paused(false);
-        }
-        if (orbit === 'orbit2') {
-            setIsOrbit2Paused(false);
         }
     }
 
@@ -75,7 +66,7 @@ function MySocial({handle808Page}) {
                     </div>
 
                     {/* Orbit1: Medium, Youtube, Medium */}
-                    <div className={`orbit-1 orbit-1-move ${isOrbit1Paused ? 'paused' : ''}`}>
+                    <div ref={orbit1Ref} className={`orbit-1 orbit-1-move`}>
                         <div className="planet-wrapper">
                             <div className="planet"
                                  onMouseEnter={handleHover}
@@ -85,6 +76,7 @@ function MySocial({handle808Page}) {
                                 <img
                                     src={mediumIcon}
                                     alt="Medium orbit1"
+                                    data-orbit="orbit1"
                                 />
                             </div>
                         </div>
@@ -97,6 +89,7 @@ function MySocial({handle808Page}) {
                                 <img
                                     src={youtubeIcon}
                                     alt="Youtube orbit1"
+                                    data-orbit="orbit1"
                                 />
                             </div>
                         </div>
@@ -109,13 +102,14 @@ function MySocial({handle808Page}) {
                                 <img
                                     src={myBlogIcon}
                                     alt="Medium orbit1"
+                                    data-orbit="orbit1"
                                 />
                             </div>
                         </div>
                     </div>
 
                     {/* Orbit2: Bilibili, Twitter, Behance */}
-                    <div className={`orbit-2 orbit-2-move ${isOrbit2Paused ? 'paused' : ''}`}>
+                    {/*<div className={`orbit-2 orbit-2-move ${isOrbit2Paused ? 'paused' : ''}`}>
                         <div className="planet-wrapper">
                             <div className="planet"
                                  onMouseEnter={handleHover}
@@ -152,7 +146,7 @@ function MySocial({handle808Page}) {
                                 />
                             </div>
                         </div>
-                    </div>
+                    </div>*/}
                 </div>
             </div>
         )
@@ -162,7 +156,7 @@ function MySocial({handle808Page}) {
         <motion.div
             ref={ref}
             initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'} // 滚动触发动画
+            animate={isInView ? 'visible' : 'hidden'}
             variants={fadeInVariants}
         >
             {orbitHTML()}

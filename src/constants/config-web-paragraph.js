@@ -36,7 +36,7 @@ export const IntroductionOverView = {
             technical articles. Feel free to follow my channels to share and connect. Thank you!
             <br/>
             <br/>
-            Below is a list of my <span className="text-[20px] the-highLight-words-1">core skills.</span>
+            <span className="text-[20px] the-highLight-words-1">core skills.</span>
         </>
 }
 export const projectOverView = {

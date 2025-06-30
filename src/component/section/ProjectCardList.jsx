@@ -12,11 +12,12 @@ const ProjectCard = ({ project, custom }) => {
         triggerOnce: true,
         rootMargin: "-100px 0px",
     });
+    const fadeInVariant = React.useMemo(() => fadeIn("up", "spring", custom * 0.1, 0.75), [custom]);
     const card = (
         <motion.div
             ref={ref}
             className="project-card shadow-lg flex flex-col relative my-4 sm:my-8 cursor-pointer"
-            variants={fadeIn("up", "spring", custom * 0.1, 0.75)}
+            variants={fadeInVariant}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             custom={custom}
@@ -78,7 +79,7 @@ const ProjectCard = ({ project, custom }) => {
     )
 
     return (
-        <motion.div>
+        <div>
             {isMobile ? (
                     card
                 ) :
@@ -93,7 +94,7 @@ const ProjectCard = ({ project, custom }) => {
                     </Tilt>
                 )
             }
-        </motion.div>
+        </div>
     );
 };
 

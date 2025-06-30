@@ -24,6 +24,7 @@ looping skill cards animation //迁移到tailwindcss之前的实现
     display: flex;
     align-items: center;
     margin-top: 0 !important;
+    will-change: transform;
 }
 
 .skill-card {

@@ -13,12 +13,25 @@ const SkillCard = ({ skill }) => (
     </div>
 );
 
+
 // InfiniteScrollRow 组件
 const InfiniteScrollRow = ({ skills, speed }) => {
     const containerRef = useRef(null);
     const contentRef = useRef(null);
-    const [position, setPosition] = useState(0);
+    const positionRef = useRef(0);
     const [repeatCount, setRepeatCount] = useState(1);
+    const rowWidthPerCycle = useRef(0);
+    const repeatedSkills = React.useMemo(() => {
+        return Array.from({ length: repeatCount }).flatMap(() => skills);
+    }, [repeatCount, skills]);
+
+
+    useEffect(() => {
+        if (contentRef.current) {
+            rowWidthPerCycle.current = contentRef.current.scrollWidth / repeatCount;
+        }
+    }, [repeatCount, skills]);
+
 
     // 动态计算需要的重复次数
     const calculateRepeatCount = () => {
@@ -46,24 +59,27 @@ const InfiniteScrollRow = ({ skills, speed }) => {
         let animationFrameId;
 
         const scroll = () => {
-            setPosition((prev) => {
-                const next = prev - speed;
+            positionRef.current -= speed;
 
-                // 向左滚动（speed > 0）：当第一组内容完全滑出视图时，重置位置
-                if (speed > 0 && Math.abs(next) >= totalRowWidth / repeatCount) {
-                    return 0;
-                }
+            let current = positionRef.current;
 
-                // 向右滚动（speed < 0）：当内容完全滑入视图时，将位置调整为末尾
-                if (speed < 0 && next >= 0) {
-                    return -totalRowWidth / repeatCount;
-                }
+            if (speed > 0 && Math.abs(current) >= totalRowWidth / repeatCount) {
+                current = 0;
+            }
 
-                return next;
-            });
+            if (speed < 0 && current >= 0) {
+                current = -totalRowWidth / repeatCount;
+            }
+
+            positionRef.current = current;
+
+            if (contentRef.current) {
+                contentRef.current.style.transform = `translateX(${current}px)`;
+            }
 
             animationFrameId = requestAnimationFrame(scroll);
         };
+
 
         animationFrameId = requestAnimationFrame(scroll);
 
@@ -78,14 +94,13 @@ const InfiniteScrollRow = ({ skills, speed }) => {
                 ref={contentRef}
                 className="flex absolute whitespace-nowrap"
                 style={{
-                    transform: `translateX(${position}px)`,
+                    transform: `translateX(${positionRef}px)`,
                 }}
             >
-                {Array.from({ length: repeatCount })
-                    .flatMap(() => skills)
-                    .map((skill, index) => (
-                        <SkillCard key={index} skill={skill} />
-                    ))}
+                {repeatedSkills.map((skill, index) => (
+                    <SkillCard key={index} skill={skill} />
+                ))}
+
             </div>
         </div>
     );
@@ -109,7 +124,7 @@ const SkillCardList = () => {
     const motionRef = React.useRef(null);
     const isInView = useInView(motionRef, { once: true });
     const fadeInVariants = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 0 },
         visible: {
             opacity: 1,
             y: 0,
