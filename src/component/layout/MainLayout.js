@@ -6,6 +6,7 @@ const Hero = lazy(() => import("./Hero.jsx"));
 const Overview = lazy(() => import("./Overview.jsx"));
 const Projects = lazy(() => import("./Projects.jsx"));
 const About = lazy(() => import("./About.jsx"));
+const ContactForm = lazy(() => import("../section/ContactForm.jsx"));
 
 const AutoScrollHero = withAutoScroll(Hero);
 // const AutoScrollParticleText = withAutoScroll(ParticleTextWrapper);
@@ -21,6 +22,7 @@ function MainLayout() {
             <AutoScrollOverview />
             <AutoScrollProjects />
             <AutoScrollAbout />
+            {/*<ContactForm />*/}
         </>
     );
 }
